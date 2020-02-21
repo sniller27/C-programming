@@ -21,64 +21,29 @@ int main(int argc,char *argv[])
         return 0; 
     }
 
-
-
-
-
-    // save data in program memory
-    // char* data[100]; 
-    // while (fscanf(fp,"%*s %s ",&data)==1) {
-        
-    // printf("%s\n", data);
-    // sum += (int) &data;
-
-    // }
-
-    // printf("sum: %d\n", sum);
-
-
-
-
-
-    // char data1[100];
-    // char data2[100];
-    // while (fscanf(fp,"%s %s ", &data1, &data2)==1) {
-        
-    //     printf("%s\n", data1);
-    //     printf("%s\n", data2);
-
-    // }
-
-
-    //write to file
-    char new_product_name[255];
-    int new_product_price[255];
-
-    // printf("Enter product name:"); 
-    // scanf("%s", &new_product_name);
-    
-    // printf("Enter product price:"); 
-    // scanf("%d", &new_product_price);
-
     //read from file
-    char buff[255];
-    int buff2;
+    // char product_qty[255];
+    int product_qty;
+    char product_name[255];
+    char product_price[255];
 
-    //buff2 peger vi på en memory adresse (og det gør buff automatisk)
-    while(fscanf(fp, "%s %d", buff, &buff2)!=EOF){  
+    //product_name peger vi på en memory adresse (og det gør product_qty automatisk)
+    while(fscanf(fp, "%d %s %s", &product_qty, product_name, product_price)!=EOF){
+
         
-        printf("Produkt: %s \n", buff );
-        printf("Pris: %d \n", buff2 );
 
-        sum += buff2;
+        // printf(fp);
+        
+        printf("%d\t", product_qty );
+        printf("%s \t", product_name );
+        printf("%s \t", product_price );
+        printf("\n");
+
+        //sum += product_price;
         
     }  
 
     printf("Total price: %d\n", sum );
-
-
-
-
 
     //close file connection
     fclose(fp);
