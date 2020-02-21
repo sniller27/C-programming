@@ -1,0 +1,7 @@
+Varenavn            Antal               Stkpris             Stkpris (m. rabat)  Saldo               Saldo (m. rabat)    
+mælk               20                  10.50               8.93                210.00              178.50              
+smør               7                   15.75               13.39               110.25              93.71               
+franskbrød         12                  25.00               21.25               300.00              255.00              
+rugbrød            8                   17.75               15.09               142.00              120.70              
+yoghurt             18                  12.25               10.41               220.50              187.43              
+Total price: 873.17
