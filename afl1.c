@@ -11,7 +11,7 @@ int main(int argc,char *argv[])
 
 
     // int price_reading = 0;
-    int sum = 0;
+    float sum = 0;
     int total_price = 0;
 
     //check if file exists 
@@ -21,29 +21,29 @@ int main(int argc,char *argv[])
         return 0; 
     }
 
+
+
     //read from file
     // char product_qty[255];
     int product_qty;
     char product_name[255];
-    char product_price[255];
+    float product_price;
 
     //product_name peger vi på en memory adresse (og det gør product_qty automatisk)
-    while(fscanf(fp, "%d %s %s", &product_qty, product_name, product_price)!=EOF){
-
-        
+    while(fscanf(fp, "%d %s %f", &product_qty, product_name, &product_price)!=EOF){
 
         // printf(fp);
         
         printf("%d\t", product_qty );
         printf("%s \t", product_name );
-        printf("%s \t", product_price );
+        printf("%.2f \t", product_price );
         printf("\n");
 
-        //sum += product_price;
+        sum += product_price;
         
     }  
 
-    printf("Total price: %d\n", sum );
+    printf("Total price: %.2f\n", sum );
 
     //close file connection
     fclose(fp);
