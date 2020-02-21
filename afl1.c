@@ -1,8 +1,10 @@
 #include <stdio.h> /* printf, sprintf */
 #include <stdlib.h>
+// #include <locale.h>
 
 int main(int argc,char *argv[])
 {
+    // setlocale(LC_ALL, "en_US.UTF-8");
 
     //variables
     FILE* fp = fopen("bestilling.txt","r"); 
@@ -21,10 +23,7 @@ int main(int argc,char *argv[])
         return 0; 
     }
 
-
-
     //read from file
-    // char product_qty[255];
     int product_qty;
     char product_name[255];
     float product_price;
@@ -34,9 +33,11 @@ int main(int argc,char *argv[])
 
         // printf(fp);
         
-        printf("%d\t", product_qty );
-        printf("%s \t", product_name );
-        printf("%.2f \t", product_price );
+        printf("%-*d", 20, product_qty );
+        printf("%-*s", 20, product_name );
+        printf("%-*.2f", 20, product_price );
+        printf("Total price: lol");
+
         printf("\n");
 
         sum += product_price;
