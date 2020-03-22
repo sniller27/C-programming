@@ -1,6 +1,0 @@
-Varenavn Antal Stkpris
-20	    mælk	    10.50
-7	    smør	    15.75
-12	    franskbrød	25.00
-8 	    rugbrød	    17.75
-18	    yoghurt	    12.25
