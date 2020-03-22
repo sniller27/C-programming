@@ -8,45 +8,14 @@
 
 int main(int argc,char *argv[])
 {
-    //assigning variables
-    // float weather_value = 0;
-
-    // char header_1[255],
-    //     header_2[255],
-    //     date[255];
-
     //assign arrays
     float temp_2011_1[ARRAY_SIZE];
     float temp_2020_1[ARRAY_SIZE];
+    float rain_2011_1[ARRAY_SIZE];
+    float rain_2020_1[ARRAY_SIZE];
 
-    // //instatiate filepointer instance (one for reading and one for writing)
-    // FILE* read_data = fopen("data/temp_avg_2011_1.txt","r");
-
-    // //error checking filepointers
-    // if (read_data==NULL) 
-    // { 
-    //     printf("no such file."); 
-    //     return 0; 
-    // }
-
-    // //reading headers from 1st line in file and save them to variables
-    // fscanf(read_data, "%s %s", header_1, header_2);
-    // printf("%-*s", 20, header_1);
-    // printf("%-*s \n", 20, header_2);
-
-    // // printf("Gennemsnitstemperatur: \n");
-    // int counter = 0;
-
-    // while(fscanf(read_data, "%s %f", date, &weather_value)!=EOF){
-    //     printf("%-*s", 20, date);
-    //     printf("%-*.2f", 20, weather_value);
-
-    //     //add to array
-    //     weather_value_array[counter]=weather_value;
-
-    //     printf("\n");
-    //     counter++;
-    // }
+    //task 1
+    printf("Task 1 \n");
 
     scan_values_from_file(temp_2011_1, ARRAY_SIZE, "temp_avg_2011_1");
     float temp_2011_1_avr = calc_avr(temp_2011_1, ARRAY_SIZE);
@@ -58,9 +27,28 @@ int main(int argc,char *argv[])
     printf("The average temperature for January 2020: %-*.2f \n", 20, temp_2020_1_avr);
 
     if(temp_2011_1_avr < temp_2020_1_avr) {
-         printf("Avg temperature was lowest for 2011");
+        printf("Avg temperature was lowest for 2011 \n");
     } else {
-        printf("Avg temperature was lowest for 2020");
+        printf("Avg temperature was lowest for 2020 \n");
+    }
+
+    printf("\n");
+
+    //task 2
+    printf("Task 2 \n");
+
+    scan_values_from_file(rain_2011_1, ARRAY_SIZE, "rain_2011_1");
+    float rain_2011_1_total = calc_accumulated(rain_2011_1, ARRAY_SIZE);
+    printf("The rain for January 2011: %-*.2f \n", 20, rain_2011_1_total);
+
+    scan_values_from_file(rain_2020_1, ARRAY_SIZE, "rain_2020_1");
+    float rain_2020_1_total = calc_accumulated(rain_2020_1, ARRAY_SIZE);
+    printf("The rain for January 2020: %-*.2f \n", 20, rain_2020_1_total);
+
+    if(rain_2011_1_total < rain_2020_1_total) {
+        printf("It rained the most in January 2020 \n");
+    } else {
+        printf("It rained the most in January 2011 \n");
     }
 
     return 0;

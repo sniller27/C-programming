@@ -50,6 +50,16 @@ float calc_avr(float array[], int array_size){
         sum += array[i];
     }
 
-
     return sum/array_size;
+}
+
+float calc_accumulated(float array[], int array_size){
+
+    float sum = 0;
+
+    for (int i = 0; i < array_size; ++i) {
+        sum += array[i];
+    }
+
+    return sum;
 }
