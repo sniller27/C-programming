@@ -35,6 +35,7 @@ void scan_values_from_file(float *array, int size, char *file_name){
 
         //add to array
         array[counter]=weather_value;
+        // printf("%-*.2f \n", 20, weather_value);
 
         // printf("\n");
         counter++;
@@ -62,4 +63,43 @@ float calc_accumulated(float array[], int array_size){
     }
 
     return sum;
+}
+
+int more_than(float array[], int array_size, float value){
+
+    int qty = 0;
+
+    for (int i = 0; i < array_size; ++i) {
+        if(array[i]>value){
+            qty++;
+        }
+    }
+
+    return qty;
+}
+
+int less_than(float array[], int array_size, float value){
+
+    int qty = 0;
+
+    for (int i = 0; i < array_size; ++i) {
+        if(array[i]<value){
+            qty++;
+        }
+    }
+
+    return qty;
+}
+
+int equals(float array[], int array_size, float value){
+
+    int qty = 0;
+
+    for (int i = 0; i < array_size; ++i) {
+        if(array[i]==value){
+            qty++;
+        }
+    }
+
+    return qty;
 }
