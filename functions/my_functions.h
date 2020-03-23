@@ -103,3 +103,41 @@ int equals(float array[], int array_size, float value){
 
     return qty;
 }
+
+float list_max_value(float array[], int array_size){
+
+    float max;
+    
+    for (int i = 0; i < array_size; ++i) {
+
+        if(i==0){
+            max = array[i];
+        }
+
+        if(array[i]>max){
+            max = array[i];
+        }
+
+    }
+
+    return max;
+}
+
+float list_min_value(float array[], int array_size){
+
+    float min;
+
+    for (int i = 0; i < array_size; ++i) {
+
+        if(i==0){
+            min = array[i];
+        }
+
+        if(array[i]<min){
+            min = array[i];
+        }
+
+    }
+
+    return min;
+}

@@ -69,6 +69,10 @@ int main(int argc,char *argv[])
 
     //task 4
     printf("Task 4 \n");
+    printf("Highest temperature January 2011: %-*.2f \n", 20, list_max_value(temp_2011_1, TEMP_2011_1_SIZE));
+    printf("Highest temperature January 2020: %-*.2f \n", 20, list_max_value(temp_2020_1, TEMP_2020_1_SIZE));
+    printf("Lowest temperature January 2011: %-*.2f \n", 20, list_min_value(temp_2011_1, TEMP_2011_1_SIZE));
+    printf("Lowest temperature January 2020: %-*.2f \n", 20, list_min_value(temp_2020_1, TEMP_2020_1_SIZE));
 
     return 0;
 }
