@@ -212,7 +212,8 @@ int values_between(float array[], int array_size, float floor, float ceil){
 //this function is from the learning material (selection sort algorithm)
 void selectionsort(float a[],int n) {
 
-        int pos,gem;
+        int pos;
+        float gem;
 
         for(int i=0; i<n-1; i++) {
 
@@ -230,4 +231,22 @@ void selectionsort(float a[],int n) {
                 a[pos]=gem;
             }
         }
+}
+
+float get_median(float array[], int array_size){
+
+    int middle_index;
+    float middle_average;
+
+    if(array_size % 2 == 0) {
+        middle_index = array_size/2;
+        middle_average = (array[middle_index - 1] + array[middle_index])/2;
+
+        return middle_average;
+    } else {
+        middle_index = array_size/2;
+        
+        return array[middle_index];
+    }
+
 }

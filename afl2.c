@@ -117,11 +117,16 @@ int main(int argc,char *argv[])
     //task 11
     printf("Task 10 \n");
     printf("Temperature January 2011(sorted): \n");
+
+    //selection sort (ascending)
     selectionsort(temp_2011_1, TEMP_2011_1_SIZE);
 
     for (int i = 0; i < TEMP_2011_1_SIZE; ++i) {
         printf("%-*.2f  \n", 20, temp_2011_1[i]);
     }
+
+    //median
+    printf("median: %-*.2f  \n", 20, get_median(temp_2011_1, TEMP_2011_1_SIZE));
 
     return 0;
 }
