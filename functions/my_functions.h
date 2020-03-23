@@ -143,60 +143,41 @@ float list_min_value(float array[], int array_size){
 }
 
 
-void create_digram(float array[], int array_size, float min, float max){
-
+void plot_data(float array[], int array_size, float min, float max){
+    
+    //diagram height can be changed depending on the plot accuracy wanted
     int diagram_height = 10;
 
-    // printf("min: %-*.2f \n", 20, min);
-    // printf("max: %-*.2f \n", 20, max);
-
+    //determining total range for intervals
     float difference = max-min;
+
+    //determining length for each interval
     float interval_length = difference/(diagram_height - 1);
 
+    //creating array for intervals by adding interval length for each value and subtracting it from max-value.
     float intervals[diagram_height];
 
     for (int i = 0; i < diagram_height; ++i) {
         intervals[i]=max - (i*interval_length);
-        // printf("lol: %-*.2f \n", 20, intervals[i]);
     }
 
-    // for (int i = 0; i < array_size; ++i) {
-    //     printf("%-*.2f \n", 20, array[i]);
-
-    //     if(array[i]==max){
-    //         printf("big lol");
-    //     }
-    // }
-
+    //plotting data by comparing to intervals
     for (int j = 0; j < diagram_height; ++j) {
 
         printf("%-*.2f ", 5, intervals[j]);
-        // printf("o ");
 
         for (int i = 0; i < array_size; ++i) {
-            // printf("%-*.2f \n", 20, array[i]);
-            // printf("O");
+
             if(array[i]==max){
                 printf("|");
-            } 
-            else if(array[i]>intervals[j]){
+            }else if(array[i]>intervals[j]){
                 printf("|");
             }else {
                 printf(" ");
             }
+
         }
 
-
-        // for (int j = 0; j < 30; ++j) {
-
-        //     if(9,20==array[i]){
-        //         printf("O");
-        //     }else {
-        //         printf("|");            
-        //     }
-
-        // }
-        // break;
         printf("\n");
     }
 

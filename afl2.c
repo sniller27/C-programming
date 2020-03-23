@@ -98,20 +98,9 @@ int main(int argc,char *argv[])
 
     //task 8
     printf("Task 8 \n");
-
+    printf("Rain January 2011: \n");
     printf("\n");
-    
-    create_digram(rain_2011_1, RAIN_2011_1_SIZE, list_min_value(rain_2011_1, RAIN_2011_1_SIZE), list_max_value(rain_2011_1, RAIN_2011_1_SIZE));
-    // printf(".  .  \n");
-    // printf(".  .  \n");
-    // printf(".  .. \n");
-    // printf(".. .. \n");
-    // printf(".. ...\n");
-    // printf("......\n");
-    // printf("......\n");
-    // printf("......\n");
-    // printf("......\n");
-    // printf("......\n");
+    plot_data(rain_2011_1, RAIN_2011_1_SIZE, list_min_value(rain_2011_1, RAIN_2011_1_SIZE), list_max_value(rain_2011_1, RAIN_2011_1_SIZE));
 
     return 0;
 }
