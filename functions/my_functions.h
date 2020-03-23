@@ -40,6 +40,9 @@ void scan_values_from_file(float *array, int size, char *file_name){
         // printf("\n");
         counter++;
     }
+
+    //close file connections
+    fclose(read_data);
     
 }
 
@@ -204,4 +207,27 @@ int values_between(float array[], int array_size, float floor, float ceil){
 
     return qty;
 
+}
+
+//this function is from the learning material (selection sort algorithm)
+void selectionsort(float a[],int n) {
+
+        int pos,gem;
+
+        for(int i=0; i<n-1; i++) {
+
+            pos=i;
+
+            for(int j=i+1;j<n;j++){
+                if(a[pos]>a[j]){
+                    pos=j;                    
+                }
+            }
+
+            if(pos!=i){
+                gem=a[i];
+                a[i]=a[pos];
+                a[pos]=gem;
+            }
+        }
 }

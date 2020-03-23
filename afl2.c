@@ -101,6 +101,7 @@ int main(int argc,char *argv[])
     printf("Rain January 2011: \n");
     printf("\n");
     plot_data(rain_2011_1, RAIN_2011_1_SIZE, list_min_value(rain_2011_1, RAIN_2011_1_SIZE), list_max_value(rain_2011_1, RAIN_2011_1_SIZE));
+    printf("\n");
 
     //task 9
     printf("Task 9 \n");
@@ -109,7 +110,20 @@ int main(int argc,char *argv[])
 
     //task 10
     printf("Task 10 \n");
-    printf("lalz: %d \n", values_between(temp_2020_1, TEMP_2020_1_SIZE, 4, 6));
+    printf("Days with temperature more than 4 but less than/equal to 6 for January 2011 is:");
+    printf(" %d \n", values_between(temp_2020_1, TEMP_2020_1_SIZE, 4, 6));
+    printf("\n");
+
+    //task 11
+    printf("Task 10 \n");
+    printf("Temperature January 2011(sorted): \n");
+    selectionsort(temp_2011_1, TEMP_2011_1_SIZE);
+
+    for (int i = 0; i < TEMP_2011_1_SIZE; ++i) {
+        printf("%-*.2f  \n", 20, temp_2011_1[i]);
+    }
 
     return 0;
 }
+
+
