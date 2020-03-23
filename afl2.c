@@ -74,5 +74,13 @@ int main(int argc,char *argv[])
     printf("Lowest temperature January 2011: %-*.2f \n", 20, list_min_value(temp_2011_1, TEMP_2011_1_SIZE));
     printf("Lowest temperature January 2020: %-*.2f \n", 20, list_min_value(temp_2020_1, TEMP_2020_1_SIZE));
 
+    printf("\n");
+
+    //task 5
+    printf("Task 5 \n");
+    printf("Number of days with temperature higher than average January 2011: %d \n", more_than(temp_2011_1, TEMP_2011_1_SIZE, temp_2011_1_avr));
+
+    printf("\n");
+
     return 0;
 }
