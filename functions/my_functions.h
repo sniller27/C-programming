@@ -182,3 +182,26 @@ void plot_data(float array[], int array_size, float min, float max){
     }
 
 }
+
+//function can be extended with parameter that determines equal values
+int values_between(float array[], int array_size, float floor, float ceil){
+
+    int qty = 0;
+
+    for (int i = 0; i < array_size; ++i) {
+        if(array[i]>floor && array[i]<=ceil){
+            qty++;
+        }
+    }
+
+    // for (int i = 0; i < array_size; ++i) {
+    //     if(less_than(array, array_size, ceil) && more_than(array, array_size, floor)){
+    //         qty++;
+    //     } else if(equals(array, array_size, ceil)) {
+    //         qty++;
+    //     }
+    // }
+
+    return qty;
+
+}

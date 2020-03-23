@@ -102,5 +102,14 @@ int main(int argc,char *argv[])
     printf("\n");
     plot_data(rain_2011_1, RAIN_2011_1_SIZE, list_min_value(rain_2011_1, RAIN_2011_1_SIZE), list_max_value(rain_2011_1, RAIN_2011_1_SIZE));
 
+    //task 9
+    printf("Task 9 \n");
+    printf("... \n");
+    printf("\n");
+
+    //task 10
+    printf("Task 10 \n");
+    printf("lalz: %d \n", values_between(temp_2020_1, TEMP_2020_1_SIZE, 4, 6));
+
     return 0;
 }
