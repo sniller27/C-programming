@@ -4,7 +4,8 @@
 
 // internal libraries
 #include "functions/my_functions.h"
-#define ARRAY_SIZE 30
+
+// constants
 #define TEMP_2011_1_SIZE 31
 #define TEMP_2020_1_SIZE 31
 #define RAIN_2011_1_SIZE 31
@@ -42,11 +43,11 @@ int main(int argc,char *argv[])
 
     scan_values_from_file(rain_2011_1, RAIN_2011_1_SIZE, "rain_2011_1");
     float rain_2011_1_total = calc_accumulated(rain_2011_1, RAIN_2011_1_SIZE);
-    printf("The rain for January 2011: %-*.2f \n", 20, rain_2011_1_total);
+    printf("Total rain for January 2011: %-*.2f \n", 20, rain_2011_1_total);
 
     scan_values_from_file(rain_2020_1, RAIN_2020_1_SIZE, "rain_2020_1");
     float rain_2020_1_total = calc_accumulated(rain_2020_1, RAIN_2020_1_SIZE);
-    printf("The rain for January 2020: %-*.2f \n", 20, rain_2020_1_total);
+    printf("Total rain for January 2020: %-*.2f \n", 20, rain_2020_1_total);
 
     if(rain_2011_1_total < rain_2020_1_total) {
         printf("It rained the most in January 2020 \n");
@@ -81,6 +82,17 @@ int main(int argc,char *argv[])
     printf("Number of days with temperature higher than average January 2011: %d \n", more_than(temp_2011_1, TEMP_2011_1_SIZE, temp_2011_1_avr));
 
     printf("\n");
+
+    //task 6
+    printf("Task 6 \n");
+    printf("... \n");
+    printf("\n");
+
+    //task 7
+    printf("Task 7 \n");
+    float rain_2020_1_avr = calc_avr(rain_2020_1, RAIN_2020_1_SIZE);
+    printf("The average rain January 2020: %-*.2f \n", 20, rain_2020_1_avr);
+    printf("Number of days with less rain than average January 2020: %d \n", less_than(rain_2020_1, RAIN_2020_1_SIZE, rain_2020_1_avr));
 
     return 0;
 }
