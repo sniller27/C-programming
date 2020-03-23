@@ -93,6 +93,25 @@ int main(int argc,char *argv[])
     float rain_2020_1_avr = calc_avr(rain_2020_1, RAIN_2020_1_SIZE);
     printf("The average rain January 2020: %-*.2f \n", 20, rain_2020_1_avr);
     printf("Number of days with less rain than average January 2020: %d \n", less_than(rain_2020_1, RAIN_2020_1_SIZE, rain_2020_1_avr));
+    
+    printf("\n");
+
+    //task 8
+    printf("Task 8 \n");
+
+    printf("\n");
+    
+    create_digram(rain_2011_1, RAIN_2011_1_SIZE, list_min_value(rain_2011_1, RAIN_2011_1_SIZE), list_max_value(rain_2011_1, RAIN_2011_1_SIZE));
+    // printf(".  .  \n");
+    // printf(".  .  \n");
+    // printf(".  .. \n");
+    // printf(".. .. \n");
+    // printf(".. ...\n");
+    // printf("......\n");
+    // printf("......\n");
+    // printf("......\n");
+    // printf("......\n");
+    // printf("......\n");
 
     return 0;
 }

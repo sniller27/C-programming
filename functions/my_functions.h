@@ -141,3 +141,63 @@ float list_min_value(float array[], int array_size){
 
     return min;
 }
+
+
+void create_digram(float array[], int array_size, float min, float max){
+
+    int diagram_height = 10;
+
+    // printf("min: %-*.2f \n", 20, min);
+    // printf("max: %-*.2f \n", 20, max);
+
+    float difference = max-min;
+    float interval_length = difference/(diagram_height - 1);
+
+    float intervals[diagram_height];
+
+    for (int i = 0; i < diagram_height; ++i) {
+        intervals[i]=max - (i*interval_length);
+        // printf("lol: %-*.2f \n", 20, intervals[i]);
+    }
+
+    // for (int i = 0; i < array_size; ++i) {
+    //     printf("%-*.2f \n", 20, array[i]);
+
+    //     if(array[i]==max){
+    //         printf("big lol");
+    //     }
+    // }
+
+    for (int j = 0; j < diagram_height; ++j) {
+
+        printf("%-*.2f ", 5, intervals[j]);
+        // printf("o ");
+
+        for (int i = 0; i < array_size; ++i) {
+            // printf("%-*.2f \n", 20, array[i]);
+            // printf("O");
+            if(array[i]==max){
+                printf("|");
+            } 
+            else if(array[i]>intervals[j]){
+                printf("|");
+            }else {
+                printf(" ");
+            }
+        }
+
+
+        // for (int j = 0; j < 30; ++j) {
+
+        //     if(9,20==array[i]){
+        //         printf("O");
+        //     }else {
+        //         printf("|");            
+        //     }
+
+        // }
+        // break;
+        printf("\n");
+    }
+
+}
