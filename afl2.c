@@ -60,8 +60,8 @@ int main(int argc,char *argv[])
 
     struct Year y_2011;
 
-    strcpy(y_2011.temperature.date[0], "kage");
-    scan_values_from_file(y_2011.temperature.date, y_2011.temperature.weather_value, TEMP_2011_1_SIZE, "temp_avg_2011_1");
+    // strcpy(y_2011.temperature.date[0], "kage");
+    scan_values_from_file(TEMP_2011_1_SIZE, "temp_avg_2011_1", y_2011.temperature.date, y_2011.temperature.weather_value);
     
     // printf("indhold: %-*.2f \n", 20, y_2011.temperature.weather_value[0]);
     // printf("indhold: %-*.2f \n", 20, y_2011.temperature.weather_value[1]);

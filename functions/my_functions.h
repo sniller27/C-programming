@@ -1,4 +1,4 @@
-void scan_values_from_file(char date_array[255][31], float *value_array, int size, char *file_name){
+void scan_values_from_file(int size, char *file_name, char date_array[][size], float *value_array){
 
     float weather_value = 0;
 
