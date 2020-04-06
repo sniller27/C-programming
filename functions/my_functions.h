@@ -1,12 +1,12 @@
-void scan_values_from_file(float *array, int size, char *file_name){
+void scan_values_from_file(char date_array[255][31], float *value_array, int size, char *file_name){
 
     float weather_value = 0;
 
-    char header_1[255],
+    char file_path[80],
+        header_1[255],
         header_2[255],
         date[255];
 
-    char file_path[80];
     strcpy(file_path, "data/");
     strcat(file_path, file_name);
     strcat(file_path, ".txt");
@@ -33,9 +33,16 @@ void scan_values_from_file(float *array, int size, char *file_name){
         // printf("%-*s", 20, date);
         // printf("%-*.2f", 20, weather_value);
 
-        //add to array
-        array[counter]=weather_value;
+        // printf("%-*s", 20, date);
         // printf("%-*.2f \n", 20, weather_value);
+
+        //add to array
+        // printf("trolo: %-*s \n", 20, date_array[0]);
+        // strcpy(date_array[0], "kanina");
+        // strcpy(date_array[1], "troles");
+        strcpy(date_array[counter], date);
+
+        value_array[counter]=weather_value;
 
         // printf("\n");
         counter++;
