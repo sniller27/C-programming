@@ -75,7 +75,7 @@ float calc_accumulated(float array[], int array_size){
     return sum;
 }
 
-int more_than(float array[], int array_size, float value){
+int values_more_than(float array[], int array_size, float value){
 
     int qty = 0;
 
@@ -88,7 +88,7 @@ int more_than(float array[], int array_size, float value){
     return qty;
 }
 
-int less_than(float array[], int array_size, float value){
+int values_less_than(float array[], int array_size, float value){
 
     int qty = 0;
 
@@ -101,7 +101,7 @@ int less_than(float array[], int array_size, float value){
     return qty;
 }
 
-int equals(float array[], int array_size, float value){
+int values_equals(float array[], int array_size, float value){
 
     int qty = 0;
 
@@ -215,6 +215,23 @@ void plot_data(float array[], int array_size, float min, float max){
         }
 
         printf("\n");
+    }
+
+}
+
+void compare_temperature_years(int array_size, struct Year year1, struct Year year2){
+
+    for (int i = 0; i < array_size; ++i) {
+
+        if(year1.temperature.weather_value[i]>year2.temperature.weather_value[i]) {
+
+            printf("On %s the temperature was higher than %s \n", year1.temperature.date[i], year2.temperature.date[i]);
+
+        } else {
+
+            printf("On %s the temperature was higher than %s \n", year2.temperature.date[i], year1.temperature.date[i]);
+
+        }
     }
 
 }

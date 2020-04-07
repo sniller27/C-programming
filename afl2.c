@@ -71,12 +71,12 @@ int main(int argc,char *argv[])
 
     //task 3
     printf("Task 3 \n");
-    printf("Days with more than 0 degrees in 2011: %d \n", more_than(y_2011.temperature.weather_value, TEMP_2011_1_SIZE, 0));
-    printf("Days with more than 0 degrees in 2020: %d \n", more_than(y_2020.temperature.weather_value, TEMP_2020_1_SIZE, 0));
-    printf("Days with 0 degrees in 2011: %d \n", equals(y_2011.temperature.weather_value, TEMP_2011_1_SIZE, 0));
-    printf("Days with 0 degrees in 2020: %d \n", equals(y_2020.temperature.weather_value, TEMP_2020_1_SIZE, 0));
-    printf("Days with less than 0 degrees in 2011: %d \n", less_than(y_2011.temperature.weather_value, TEMP_2011_1_SIZE, 0));
-    printf("Days with less than 0 degrees in 2020: %d \n", less_than(y_2020.temperature.weather_value, TEMP_2020_1_SIZE, 0));
+    printf("Days with more than 0 degrees in 2011: %d \n", values_more_than(y_2011.temperature.weather_value, TEMP_2011_1_SIZE, 0));
+    printf("Days with more than 0 degrees in 2020: %d \n", values_more_than(y_2020.temperature.weather_value, TEMP_2020_1_SIZE, 0));
+    printf("Days with 0 degrees in 2011: %d \n", values_equals(y_2011.temperature.weather_value, TEMP_2011_1_SIZE, 0));
+    printf("Days with 0 degrees in 2020: %d \n", values_equals(y_2020.temperature.weather_value, TEMP_2020_1_SIZE, 0));
+    printf("Days with less than 0 degrees in 2011: %d \n", values_less_than(y_2011.temperature.weather_value, TEMP_2011_1_SIZE, 0));
+    printf("Days with less than 0 degrees in 2020: %d \n", values_less_than(y_2020.temperature.weather_value, TEMP_2020_1_SIZE, 0));
 
     printf("\n");
 
@@ -91,7 +91,7 @@ int main(int argc,char *argv[])
 
     //task 5
     printf("Task 5 \n");
-    printf("Number of days with temperature higher than average January 2011: %d \n", more_than(y_2011.temperature.weather_value, TEMP_2011_1_SIZE, temp_2011_1_avr));
+    printf("Number of days with temperature higher than average January 2011: %d \n", values_more_than(y_2011.temperature.weather_value, TEMP_2011_1_SIZE, temp_2011_1_avr));
 
     printf("\n");
 
@@ -114,7 +114,7 @@ int main(int argc,char *argv[])
     printf("Task 7 \n");
     float rain_2020_1_avr = calc_avr(y_2020.rain.weather_value, RAIN_2020_1_SIZE);
     printf("The average rain January 2020: %-*.2f \n", 20, rain_2020_1_avr);
-    printf("Number of days with less rain than average January 2020: %d \n", less_than(y_2020.rain.weather_value, RAIN_2020_1_SIZE, rain_2020_1_avr));
+    printf("Number of days with less rain than average January 2020: %d \n", values_less_than(y_2020.rain.weather_value, RAIN_2020_1_SIZE, rain_2020_1_avr));
     
     printf("\n");
 
@@ -125,30 +125,32 @@ int main(int argc,char *argv[])
     plot_data(y_2011.rain.weather_value, RAIN_2011_1_SIZE, list_min_value(y_2011.rain.weather_value, RAIN_2011_1_SIZE), list_max_value(y_2011.rain.weather_value, RAIN_2011_1_SIZE));
     printf("\n");
 
-    // //task 9
-    // printf("Task 9 \n");
-    // printf("... \n");
-    // printf("\n");
+    //task 9
+    printf("Task 9 \n");
+    int comparison_array[31];
+    compare_temperature_years(31, y_2011, y_2020);
 
-    // //task 10
-    // printf("Task 10 \n");
-    // printf("Days with temperature more than 4 but less than/equal to 6 for January 2011 is:");
-    // printf(" %d \n", values_between(temp_2020_1, TEMP_2020_1_SIZE, 4, 6));
-    // printf("\n");
+    printf("\n");
 
-    // //task 11
-    // printf("Task 10 \n");
-    // printf("Temperature January 2011(sorted): \n");
+    //task 10
+    printf("Task 10 \n");
+    printf("Days with temperature more than 4 but less than/equal to 6 for January 2020 is:");
+    printf(" %d \n", values_between(y_2020.temperature.weather_value, TEMP_2020_1_SIZE, 4, 6));
+    printf("\n");
 
-    // //selection sort (ascending)
-    // selectionsort(temp_2011_1, TEMP_2011_1_SIZE);
+    //task 11
+    printf("Task 10 \n");
+    printf("Temperature January 2011(sorted): \n");
 
-    // for (int i = 0; i < TEMP_2011_1_SIZE; ++i) {
-    //     printf("%-*.2f  \n", 20, temp_2011_1[i]);
-    // }
+    //selection sort (ascending)
+    selectionsort(y_2011.temperature.weather_value, TEMP_2011_1_SIZE);
 
-    // //median
-    // printf("median: %-*.2f  \n", 20, get_median(temp_2011_1, TEMP_2011_1_SIZE));
+    for (int i = 0; i < TEMP_2011_1_SIZE; ++i) {
+        printf("%-*.2f  \n", 20, y_2011.temperature.weather_value[i]);
+    }
+
+    //median
+    printf("median: %-*.2f  \n", 20, get_median(y_2011.temperature.weather_value, TEMP_2011_1_SIZE));
 
     return 0;
 }
