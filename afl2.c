@@ -252,6 +252,10 @@ int main(int argc,char *argv[])
     printf("median: %-*.2f  \n", 20, median);
     fprintf(output_file, "median: %-*.2f  \n", 20, median);
 
+
+    //close file pointer
+    fclose(output_file);
+
     return 0;
 }
 
