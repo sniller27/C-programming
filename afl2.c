@@ -108,33 +108,22 @@ int main(int argc,char *argv[])
     array_indexes_more_than(RAIN_2020_1_SIZE, y_2020.rain.weather_value, indexes_2020, 0, &indexes_length_2020);
     print_string_array_from_indexes(indexes_length_2020, y_2020.rain.date, indexes_2020);
     
-    // print_values_array(RAIN_2011_1_SIZE, lol);
-
-
-    // array_filter_more_than(RAIN_2011_1_SIZE, selected_dates, y_2011.rain.date, y_2011.rain.weather_value);
-    // char selected_dates[255][31];
-    // print_values_array(RAIN_2011_1_SIZE, selected_dates);
-    // printf("meh: %s \n", selected_dates[0]);
-    // printf("meh: %s \n", selected_dates[1]);
-    // printf("meh: %s \n", selected_dates[2]);
-    // printf("meh: %s \n", selected_dates[3]);
-    // printf("... \n");
     printf("\n");
 
-    // //task 7
-    // printf("Task 7 \n");
-    // float rain_2020_1_avr = calc_avr(rain_2020_1, RAIN_2020_1_SIZE);
-    // printf("The average rain January 2020: %-*.2f \n", 20, rain_2020_1_avr);
-    // printf("Number of days with less rain than average January 2020: %d \n", less_than(rain_2020_1, RAIN_2020_1_SIZE, rain_2020_1_avr));
+    //task 7
+    printf("Task 7 \n");
+    float rain_2020_1_avr = calc_avr(y_2020.rain.weather_value, RAIN_2020_1_SIZE);
+    printf("The average rain January 2020: %-*.2f \n", 20, rain_2020_1_avr);
+    printf("Number of days with less rain than average January 2020: %d \n", less_than(y_2020.rain.weather_value, RAIN_2020_1_SIZE, rain_2020_1_avr));
     
-    // printf("\n");
+    printf("\n");
 
-    // //task 8
-    // printf("Task 8 \n");
-    // printf("Rain January 2011: \n");
-    // printf("\n");
-    // plot_data(rain_2011_1, RAIN_2011_1_SIZE, list_min_value(rain_2011_1, RAIN_2011_1_SIZE), list_max_value(rain_2011_1, RAIN_2011_1_SIZE));
-    // printf("\n");
+    //task 8
+    printf("Task 8 \n");
+    printf("Rain January 2011: \n");
+    printf("\n");
+    plot_data(y_2011.rain.weather_value, RAIN_2011_1_SIZE, list_min_value(y_2011.rain.weather_value, RAIN_2011_1_SIZE), list_max_value(y_2011.rain.weather_value, RAIN_2011_1_SIZE));
+    printf("\n");
 
     // //task 9
     // printf("Task 9 \n");
