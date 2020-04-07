@@ -1,0 +1,27 @@
+Task 1 
+The average temperature for January 2011: 0.35                 
+The average temperature for January 2020: 5.50                 
+Avg temperature was lowest for 2011 
+
+Task 2 
+Total rain for January 2011: 48.00                
+Total rain for January 2020: 77.00                
+It rained the most in January 2020 
+
+Task 3 
+Days with more than 0 degrees in 2011: 16 
+Days with more than 0 degrees in 2020: 31 
+Days with 0 degrees in 2011: 0 
+Days with 0 degrees in 2020: 0 
+Days with less than 0 degrees in 2011: 15 
+Days with less than 0 degrees in 2020: 0 
+
+Task 4 
+Highest temperature January 2011: 5.90                 
+Highest temperature January 2020: 8.20                 
+Lowest temperature January 2011: -4.60                
+Lowest temperature January 2020: 3.60                 
+
+Task 5 
+Number of days with temperature higher than average January 2011: 16 
+

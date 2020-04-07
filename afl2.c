@@ -16,6 +16,9 @@
 
 int main(int argc,char *argv[])
 {
+    //creating filepointer for writing outputs to file
+    FILE* output_file = fopen("output.txt", "w");
+
     //declare arrays
     float temp_2011_1[TEMP_2011_1_SIZE], temp_2020_1[TEMP_2020_1_SIZE], rain_2011_1[RAIN_2011_1_SIZE], rain_2020_1[RAIN_2020_1_SIZE];
 
@@ -29,18 +32,23 @@ int main(int argc,char *argv[])
 
     //task 1
     printf("Task 1 \n");
+    fprintf(output_file, "Task 1 \n");
 
     float temp_2011_1_avr = calc_avr(y_2011.temperature.weather_value, TEMP_2011_1_SIZE);
     printf("The average temperature for January 2011: %-*.2f \n", 20, temp_2011_1_avr);
+    fprintf(output_file, "The average temperature for January 2011: %-*.2f \n", 20, temp_2011_1_avr);
 
     float temp_2020_1_avr = calc_avr(y_2020.temperature.weather_value, TEMP_2020_1_SIZE);
     printf("The average temperature for January 2020: %-*.2f \n", 20, temp_2020_1_avr);
+    fprintf(output_file, "The average temperature for January 2020: %-*.2f \n", 20, temp_2020_1_avr);
 
     //determine which month has the lowest average temperature
     if(temp_2011_1_avr < temp_2020_1_avr) {
         printf("Avg temperature was lowest for 2011 \n");
+        fprintf(output_file, "Avg temperature was lowest for 2011 \n");
     } else {
         printf("Avg temperature was lowest for 2020 \n");
+        fprintf(output_file, "Avg temperature was lowest for 2020 \n");
     }
 
     // for (int i = 0; i < 31; i++)
@@ -51,49 +59,101 @@ int main(int argc,char *argv[])
     // }
 
     printf("\n");
+    fprintf(output_file, "\n");
 
     //task 2
     printf("Task 2 \n");
+    fprintf(output_file, "Task 2 \n");
 
     float rain_2011_1_total = calc_accumulated(y_2011.rain.weather_value, RAIN_2011_1_SIZE);
     printf("Total rain for January 2011: %-*.2f \n", 20, rain_2011_1_total);
+    fprintf(output_file, "Total rain for January 2011: %-*.2f \n", 20, rain_2011_1_total);
 
     float rain_2020_1_total = calc_accumulated(y_2020.rain.weather_value, RAIN_2020_1_SIZE);
     printf("Total rain for January 2020: %-*.2f \n", 20, rain_2020_1_total);
+    fprintf(output_file, "Total rain for January 2020: %-*.2f \n", 20, rain_2020_1_total);
 
     if(rain_2011_1_total < rain_2020_1_total) {
         printf("It rained the most in January 2020 \n");
+        fprintf(output_file, "It rained the most in January 2020 \n");
     } else {
         printf("It rained the most in January 2011 \n");
+        fprintf(output_file, "It rained the most in January 2011 \n");
     }
 
     printf("\n");
+    fprintf(output_file, "\n");
 
     //task 3
     printf("Task 3 \n");
-    printf("Days with more than 0 degrees in 2011: %d \n", values_more_than(y_2011.temperature.weather_value, TEMP_2011_1_SIZE, 0));
-    printf("Days with more than 0 degrees in 2020: %d \n", values_more_than(y_2020.temperature.weather_value, TEMP_2020_1_SIZE, 0));
-    printf("Days with 0 degrees in 2011: %d \n", values_equals(y_2011.temperature.weather_value, TEMP_2011_1_SIZE, 0));
-    printf("Days with 0 degrees in 2020: %d \n", values_equals(y_2020.temperature.weather_value, TEMP_2020_1_SIZE, 0));
-    printf("Days with less than 0 degrees in 2011: %d \n", values_less_than(y_2011.temperature.weather_value, TEMP_2011_1_SIZE, 0));
-    printf("Days with less than 0 degrees in 2020: %d \n", values_less_than(y_2020.temperature.weather_value, TEMP_2020_1_SIZE, 0));
+    fprintf(output_file, "Task 3 \n");
+
+    int no_of_days = 0;
+
+    no_of_days = values_more_than(y_2011.temperature.weather_value, TEMP_2011_1_SIZE, 0);
+    printf("Days with more than 0 degrees in 2011: %d \n", no_of_days);
+    fprintf(output_file, "Days with more than 0 degrees in 2011: %d \n", no_of_days);
+
+    no_of_days = values_more_than(y_2020.temperature.weather_value, TEMP_2020_1_SIZE, 0);
+    printf("Days with more than 0 degrees in 2020: %d \n", no_of_days);
+    fprintf(output_file, "Days with more than 0 degrees in 2020: %d \n", no_of_days);
+
+    no_of_days = values_equals(y_2011.temperature.weather_value, TEMP_2011_1_SIZE, 0);
+    printf("Days with 0 degrees in 2011: %d \n", no_of_days);
+    fprintf(output_file, "Days with 0 degrees in 2011: %d \n", no_of_days);
+
+    no_of_days = values_equals(y_2020.temperature.weather_value, TEMP_2020_1_SIZE, 0);
+    printf("Days with 0 degrees in 2020: %d \n", no_of_days);
+    fprintf(output_file, "Days with 0 degrees in 2020: %d \n", no_of_days);
+
+    no_of_days = values_less_than(y_2011.temperature.weather_value, TEMP_2011_1_SIZE, 0);
+    printf("Days with less than 0 degrees in 2011: %d \n", no_of_days);
+    fprintf(output_file, "Days with less than 0 degrees in 2011: %d \n", no_of_days);
+
+    no_of_days = values_less_than(y_2020.temperature.weather_value, TEMP_2020_1_SIZE, 0);
+    printf("Days with less than 0 degrees in 2020: %d \n", no_of_days);
+    fprintf(output_file, "Days with less than 0 degrees in 2020: %d \n", no_of_days);
 
     printf("\n");
+    fprintf(output_file, "\n");
 
     //task 4
     printf("Task 4 \n");
-    printf("Highest temperature January 2011: %-*.2f \n", 20, list_max_value(y_2011.temperature.weather_value, TEMP_2011_1_SIZE));
-    printf("Highest temperature January 2020: %-*.2f \n", 20, list_max_value(y_2020.temperature.weather_value, TEMP_2020_1_SIZE));
-    printf("Lowest temperature January 2011: %-*.2f \n", 20, list_min_value(y_2011.temperature.weather_value, TEMP_2011_1_SIZE));
-    printf("Lowest temperature January 2020: %-*.2f \n", 20, list_min_value(y_2020.temperature.weather_value, TEMP_2020_1_SIZE));
+    fprintf(output_file, "Task 4 \n");
+
+    float min, max;
+
+    max = list_max_value(y_2011.temperature.weather_value, TEMP_2011_1_SIZE);
+    printf("Highest temperature January 2011: %-*.2f \n", 20, max);
+    fprintf(output_file, "Highest temperature January 2011: %-*.2f \n", 20, max);
+    
+    max = list_max_value(y_2020.temperature.weather_value, TEMP_2020_1_SIZE);
+    printf("Highest temperature January 2020: %-*.2f \n", 20, max);
+    fprintf(output_file, "Highest temperature January 2020: %-*.2f \n", 20, max);
+
+    min = list_min_value(y_2011.temperature.weather_value, TEMP_2011_1_SIZE);
+    printf("Lowest temperature January 2011: %-*.2f \n", 20, min);
+    fprintf(output_file, "Lowest temperature January 2011: %-*.2f \n", 20, min);
+
+    min = list_min_value(y_2020.temperature.weather_value, TEMP_2020_1_SIZE);
+    printf("Lowest temperature January 2020: %-*.2f \n", 20, min);
+    fprintf(output_file, "Lowest temperature January 2020: %-*.2f \n", 20, min);
 
     printf("\n");
+    fprintf(output_file, "\n");
 
     //task 5
     printf("Task 5 \n");
-    printf("Number of days with temperature higher than average January 2011: %d \n", values_more_than(y_2011.temperature.weather_value, TEMP_2011_1_SIZE, temp_2011_1_avr));
+    fprintf(output_file, "Task 5 \n");
+
+    int more_than;
+
+    more_than = values_more_than(y_2011.temperature.weather_value, TEMP_2011_1_SIZE, temp_2011_1_avr);
+    printf("Number of days with temperature higher than average January 2011: %d \n", more_than);
+    fprintf(output_file, "Number of days with temperature higher than average January 2011: %d \n", more_than);
 
     printf("\n");
+    fprintf(output_file, "\n");
 
     //task 6
     printf("Task 6 \n");
