@@ -225,17 +225,19 @@ void plot_data(float array[], int array_size, float min, float max, FILE* file1)
 
 }
 
-void compare_temperature_years(int array_size, struct Year year1, struct Year year2){
+void compare_temperature_years(int array_size, struct Year year1, struct Year year2, FILE* file1){
 
     for (int i = 0; i < array_size; ++i) {
 
         if(year1.temperature.weather_value[i]>year2.temperature.weather_value[i]) {
 
             printf("On %s the temperature was higher than %s \n", year1.temperature.date[i], year2.temperature.date[i]);
+            fprintf(file1, "On %s the temperature was higher than %s \n", year1.temperature.date[i], year2.temperature.date[i]);
 
         } else {
 
             printf("On %s the temperature was higher than %s \n", year2.temperature.date[i], year1.temperature.date[i]);
+            fprintf(file1, "On %s the temperature was higher than %s \n", year2.temperature.date[i], year1.temperature.date[i]);
 
         }
     }

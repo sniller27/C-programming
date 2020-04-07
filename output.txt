@@ -101,4 +101,72 @@ Rain January 2011:
 0.00  | ||||||| |||||||| ||| ||| || |
 
 Task 9 
+On 2020-01-01 the temperature was higher than 2011-01-01 
+On 2020-01-02 the temperature was higher than 2011-01-02 
+On 2020-01-03 the temperature was higher than 2011-01-03 
+On 2020-01-04 the temperature was higher than 2011-01-04 
+On 2020-01-05 the temperature was higher than 2011-01-05 
+On 2020-01-06 the temperature was higher than 2011-01-06 
+On 2020-01-07 the temperature was higher than 2011-01-07 
+On 2020-01-08 the temperature was higher than 2011-01-08 
+On 2020-01-09 the temperature was higher than 2011-01-09 
+On 2020-01-10 the temperature was higher than 2011-01-10 
+On 2020-01-11 the temperature was higher than 2011-01-11 
+On 2020-01-12 the temperature was higher than 2011-01-12 
+On 2020-01-13 the temperature was higher than 2011-01-13 
+On 2020-01-14 the temperature was higher than 2011-01-14 
+On 2020-01-15 the temperature was higher than 2011-01-15 
+On 2020-01-16 the temperature was higher than 2011-01-16 
+On 2020-01-17 the temperature was higher than 2011-01-17 
+On 2020-01-18 the temperature was higher than 2011-01-18 
+On 2020-01-19 the temperature was higher than 2011-01-19 
+On 2020-01-20 the temperature was higher than 2011-01-20 
+On 2020-01-21 the temperature was higher than 2011-01-21 
+On 2020-01-22 the temperature was higher than 2011-01-22 
+On 2020-01-23 the temperature was higher than 2011-01-23 
+On 2020-01-24 the temperature was higher than 2011-01-24 
+On 2020-01-25 the temperature was higher than 2011-01-25 
+On 2020-01-26 the temperature was higher than 2011-01-26 
+On 2020-01-27 the temperature was higher than 2011-01-27 
+On 2020-01-28 the temperature was higher than 2011-01-28 
+On 2020-01-29 the temperature was higher than 2011-01-29 
+On 2020-01-30 the temperature was higher than 2011-01-30 
+On 2020-01-31 the temperature was higher than 2011-01-31 
 
+Task 10 
+Days with temperature more than 4 but less than/equal to 6 for January 2020 is: 21 
+
+Task 11 
+Temperature January 2011(sorted): 
+-4.60                 
+-3.70                 
+-2.90                 
+-2.40                 
+-1.80                 
+-1.20                 
+-1.20                 
+-1.20                 
+-0.90                 
+-0.80                 
+-0.50                 
+-0.30                 
+-0.30                 
+-0.20                 
+-0.10                 
+0.50                  
+0.50                  
+0.70                  
+0.80                  
+1.20                  
+1.30                  
+1.60                  
+1.60                  
+1.80                  
+2.00                  
+2.20                  
+2.70                  
+2.80                  
+3.40                  
+4.10                  
+5.90                  
+median: 0.50                  

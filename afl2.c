@@ -212,31 +212,45 @@ int main(int argc,char *argv[])
     //task 9
     printf("Task 9 \n");
     fprintf(output_file, "Task 9 \n");
-
-    compare_temperature_years(31, y_2011, y_2020);
+    
+    compare_temperature_years(31, y_2011, y_2020, output_file);
 
     printf("\n");
     fprintf(output_file, "\n");
 
     //task 10
     printf("Task 10 \n");
+    fprintf(output_file, "Task 10 \n");
+
     printf("Days with temperature more than 4 but less than/equal to 6 for January 2020 is:");
-    printf(" %d \n", values_between(y_2020.temperature.weather_value, TEMP_2020_1_SIZE, 4, 6));
+    fprintf(output_file, "Days with temperature more than 4 but less than/equal to 6 for January 2020 is:");
+
+    no_of_days = values_between(y_2020.temperature.weather_value, TEMP_2020_1_SIZE, 4, 6);
+    printf(" %d \n", no_of_days);
+    fprintf(output_file, " %d \n", no_of_days);
+    
     printf("\n");
+    fprintf(output_file, "\n");
 
     //task 11
-    printf("Task 10 \n");
+    printf("Task 11 \n");
+    fprintf(output_file, "Task 11 \n");
+
     printf("Temperature January 2011(sorted): \n");
+    fprintf(output_file, "Temperature January 2011(sorted): \n");
 
     //selection sort (ascending)
     selectionsort(y_2011.temperature.weather_value, TEMP_2011_1_SIZE);
 
     for (int i = 0; i < TEMP_2011_1_SIZE; ++i) {
         printf("%-*.2f  \n", 20, y_2011.temperature.weather_value[i]);
+        fprintf(output_file, "%-*.2f  \n", 20, y_2011.temperature.weather_value[i]);
     }
 
     //median
-    printf("median: %-*.2f  \n", 20, get_median(y_2011.temperature.weather_value, TEMP_2011_1_SIZE));
+    float median = get_median(y_2011.temperature.weather_value, TEMP_2011_1_SIZE);
+    printf("median: %-*.2f  \n", 20, median);
+    fprintf(output_file, "median: %-*.2f  \n", 20, median);
 
     return 0;
 }
