@@ -2,11 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-// internal libraries
-#include "functions/my_functions.h"
-
 //internal structs
 #include "structs/my_structs.h"
+
+// internal libraries
+#include "functions/my_functions.h"
 
 // constants
 #define TEMP_2011_1_SIZE 31
@@ -97,7 +97,28 @@ int main(int argc,char *argv[])
 
     //task 6
     printf("Task 6 \n");
-    printf("... \n");
+
+    printf("Dage med med mere end 0 mm nedbør i Januar 2011: \n");
+    int indexes_2011[31], indexes_length_2011 = 0;
+    array_indexes_more_than(RAIN_2011_1_SIZE, y_2011.rain.weather_value, indexes_2011, 0, &indexes_length_2011);
+    print_string_array_from_indexes(indexes_length_2011, y_2011.rain.date, indexes_2011);
+    
+    printf("Dage med med mere end 0 mm nedbør i Januar 2020: \n");
+    int indexes_2020[31], indexes_length_2020 = 0;
+    array_indexes_more_than(RAIN_2020_1_SIZE, y_2020.rain.weather_value, indexes_2020, 0, &indexes_length_2020);
+    print_string_array_from_indexes(indexes_length_2020, y_2020.rain.date, indexes_2020);
+    
+    // print_values_array(RAIN_2011_1_SIZE, lol);
+
+
+    // array_filter_more_than(RAIN_2011_1_SIZE, selected_dates, y_2011.rain.date, y_2011.rain.weather_value);
+    // char selected_dates[255][31];
+    // print_values_array(RAIN_2011_1_SIZE, selected_dates);
+    // printf("meh: %s \n", selected_dates[0]);
+    // printf("meh: %s \n", selected_dates[1]);
+    // printf("meh: %s \n", selected_dates[2]);
+    // printf("meh: %s \n", selected_dates[3]);
+    // printf("... \n");
     printf("\n");
 
     // //task 7

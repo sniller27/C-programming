@@ -152,6 +152,32 @@ float list_min_value(float array[], int array_size){
     return min;
 }
 
+void array_indexes_more_than(int array_size, float *array, int *indexes, int value, int *index_array_length){
+    
+    int counter = 0;
+    
+    for (int i = 0; i < array_size; ++i) {
+        if (array[i]>value) {
+            indexes[counter] = i;
+            counter++;
+        }
+    }
+
+    *index_array_length = counter;
+
+}
+
+// void print_int_array(int array_size, int *array){
+//     for (int i = 0; i < array_size; ++i) {
+//         printf("print int array: %d \n", array[i]);
+//     }
+// }
+
+void print_string_array_from_indexes(int array_size, char dates[][31], int *indexes){
+    for (int i = 0; i < array_size; ++i) {
+        printf("%s \n", dates[indexes[i]]);
+    }
+}
 
 void plot_data(float array[], int array_size, float min, float max){
     
