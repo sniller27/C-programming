@@ -173,13 +173,14 @@ void array_indexes_more_than(int array_size, float *array, int *indexes, int val
 //     }
 // }
 
-void print_string_array_from_indexes(int array_size, char dates[][31], int *indexes){
+void print_string_array_from_indexes(int array_size, char dates[][31], int *indexes, FILE* file){
     for (int i = 0; i < array_size; ++i) {
         printf("%s \n", dates[indexes[i]]);
+        fprintf(file, "%s \n", dates[indexes[i]]);
     }
 }
 
-void plot_data(float array[], int array_size, float min, float max){
+void plot_data(float array[], int array_size, float min, float max, FILE* file1){
     
     //diagram height can be changed depending on the plot accuracy wanted
     int diagram_height = 10;
@@ -201,20 +202,25 @@ void plot_data(float array[], int array_size, float min, float max){
     for (int j = 0; j < diagram_height; ++j) {
 
         printf("%-*.2f ", 5, intervals[j]);
+        fprintf(file1, "%-*.2f ", 5, intervals[j]);
 
         for (int i = 0; i < array_size; ++i) {
 
             if(array[i]==max){
                 printf("|");
+                fprintf(file1, "|");
             }else if(array[i]>intervals[j]){
                 printf("|");
+                fprintf(file1, "|");
             }else {
                 printf(" ");
+                fprintf(file1, " ");
             }
 
         }
 
         printf("\n");
+        fprintf(file1, "\n");
     }
 
 }
