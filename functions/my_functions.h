@@ -200,17 +200,6 @@ void array_indexes_more_than(int array_size, float *array, int *indexes, int val
 
 }
 
-/**
- *      Objective: Prints and writes to file specific values of string array (2d char-array) based on values of a given integer array.
- *      Parameters: Receives an integer array and its size, a string-array and a filepointer (write to file)
- *      Return value: Returns void
- * **/
-void print_string_array_from_indexes(int array_size, char dates[][31], int *indexes, FILE* file){
-    for (int i = 0; i < array_size; ++i) {
-        printf("%s \n", dates[indexes[i]]);
-        fprintf(file, "%s \n", dates[indexes[i]]);
-    }
-}
 
 void plot_data(float array[], int array_size, float min, float max, FILE* file1){
     
