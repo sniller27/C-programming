@@ -183,7 +183,7 @@ float list_min_value(float array[], int array_size){
  *                 stored in a integer array and number of elements are assigned to integer variable.
  *      Parameters: Receives float array and its size, an integer array for the found indexes, an integer
  *                  value for a given comarison value and a variable for length of the array of indexes.
- *      Return value: Return void (however the integer array is populated and the length of the array is assigned an integer)
+ *      Return value: Returns void (however the integer array is populated and the length of the array is assigned an integer)
  * **/
 void array_indexes_more_than(int array_size, float *array, int *indexes, int value, int *index_array_length){
     
@@ -200,7 +200,14 @@ void array_indexes_more_than(int array_size, float *array, int *indexes, int val
 
 }
 
-
+/**
+ *      Objective: Plots diagram based on values of float array. Done by determining intervals values between 
+ *                 minimum and maximum values (intervals can be adjusted in function) and then printing "strings"
+ *                 in nested loops (as a 2d string array).               
+ *      Parameters: Receives float array and its size, minimum value as float, maximum value as float and file pointer 
+ *                  (for writing to file).
+ *      Return value: Returns void
+ **/
 void plot_data(float array[], int array_size, float min, float max, FILE* file1){
     
     //diagram height can be changed depending on the plot accuracy wanted
@@ -242,6 +249,14 @@ void plot_data(float array[], int array_size, float min, float max, FILE* file1)
 
 }
 
+/**
+ *      Objective: Compare temperatures in January of two different years and prints the highest temperature of each day in January.            
+ *      Parameters: Receives size of arrays, receives structs for each year and a file pointer 
+ *                  (for writing to file).
+ *      Return value: Returns void (only printing and writing to file)
+ * 
+ *      THIS FUNCTION REQUIRES GIVEN ARRAYS TO BE THE SAME SIZE
+ **/
 void compare_temperature_years(int array_size, struct Year year1, struct Year year2, FILE* file1){
 
     for (int i = 0; i < array_size; ++i) {
