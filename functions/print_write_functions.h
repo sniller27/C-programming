@@ -1,3 +1,10 @@
+/**
+ * 
+ *      Perhaps these functions aren't that useful but they seem to save som space in the code
+ *      (etc. char text[255] could be changed to individual values by passing them down as arguments)
+ * 
+ * **/
+
 //print and write function for strings (size of char-array should probably be passed as well)
 void print_write_string(char text[255], FILE* w_file) {
 

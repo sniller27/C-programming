@@ -14,6 +14,16 @@
 
 int main(int argc,char *argv[])
 {
+    /**
+     *  Comments:
+     * 
+     *  Use of variables have been limited to some degree, since the variable are not currently 
+     *  used to anything but printing to console and writing to output-file (example of variable name could be no_days_01_2011_temp_more_than_0).
+     *  The arrays used are not dynamic but fixed values. I haven't figured how to solve that yet.
+     *  Other information could be added to structs as well, such as number of year (2011 and 2020) and name of month (January).
+     * 
+     * **/
+
     //declaring and assigning array sizes (each file have 31 lines of data)
     int TEMP_2011_1_SIZE, TEMP_2020_1_SIZE, RAIN_2011_1_SIZE, RAIN_2020_1_SIZE;
     TEMP_2011_1_SIZE = TEMP_2020_1_SIZE = RAIN_2011_1_SIZE = RAIN_2020_1_SIZE = FIXED_ARRAY_SIZE;
@@ -162,6 +172,7 @@ int main(int argc,char *argv[])
     float y_2011_01_temp_sorted[TEMP_2011_1_SIZE];
 
     //assign array to weather values
+    //memcpy is a functions from string.h (https://stackoverflow.com/questions/7882735/why-cant-i-assign-arrays-as-a-b)
     memcpy(&y_2011_01_temp_sorted, &y_2011.temperature.weather_value, sizeof y_2011_01_temp_sorted);
 
     //sort array by using selection sort
