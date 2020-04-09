@@ -9,12 +9,12 @@ Total rain for January 2020: 77.00
 It rained the most in January 2020 
 
 Task 3 
-Days with more than 0 degrees in 2011: 16 
-Days with more than 0 degrees in 2020: 31 
-Days with 0 degrees in 2011: 0 
-Days with 0 degrees in 2020: 0 
-Days with less than 0 degrees in 2011: 15 
-Days with less than 0 degrees in 2020: 0 
+Days with more than 0 degrees in January 2011: 16 
+Days with more than 0 degrees in January 2020: 31 
+Days with 0 degrees in January 2011: 0 
+Days with 0 degrees in January 2020: 0 
+Days with less than 0 degrees in January 2011: 15 
+Days with less than 0 degrees in January 2020: 0 
 
 Task 4 
 Highest temperature January 2011: 5.90                 
@@ -26,7 +26,7 @@ Task 5
 Number of days with temperature higher than average January 2011: 16 
 
 Task 6 
-Dage med med mere end 0 mm nedbør i Januar 2011: 
+Days with more than 0 mm rain in January 2011: 
 2011-01-01 
 2011-01-03 
 2011-01-04 
@@ -53,7 +53,7 @@ Dage med med mere end 0 mm nedbør i Januar 2011:
 2011-01-29 
 2011-01-31 
 
-Dage med med mere end 0 mm nedbør i Januar 2020: 
+Days with more than 0 mm rain in January 2020: 
 2020-01-02 
 2020-01-03 
 2020-01-04 
@@ -88,7 +88,7 @@ Number of days with less rain than average January 2020: 20
 
 Task 8 
 Rain January 2011: 
-
+ 
 9.20                |                
 8.18                |                
 7.16                |                
@@ -169,4 +169,4 @@ Temperature January 2011(sorted):
 3.40                  
 4.10                  
 5.90                  
-median: 0.50                  
+Median: 0.50                  

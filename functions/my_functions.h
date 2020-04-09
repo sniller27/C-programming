@@ -23,23 +23,11 @@ void scan_values_from_file(int size, char *file_name, char date_array[][size], f
 
     //reading headers from 1st line in file and save them to variables
     fscanf(read_data, "%s %s", header_1, header_2);
-    // printf("%-*s", 20, header_1);
-    // printf("%-*s \n", 20, header_2);
 
-    // printf("Gennemsnitstemperatur: \n");
     int counter = 0;
 
     while(fscanf(read_data, "%s %f", date, &weather_value)!=EOF){
-        // printf("%-*s", 20, date);
-        // printf("%-*.2f", 20, weather_value);
 
-        // printf("%-*s", 20, date);
-        // printf("%-*.2f \n", 20, weather_value);
-
-        //add to array
-        // printf("trolo: %-*s \n", 20, date_array[0]);
-        // strcpy(date_array[0], "kanina");
-        // strcpy(date_array[1], "troles");
         strcpy(date_array[counter], date);
 
         value_array[counter]=weather_value;
@@ -167,12 +155,6 @@ void array_indexes_more_than(int array_size, float *array, int *indexes, int val
 
 }
 
-// void print_int_array(int array_size, int *array){
-//     for (int i = 0; i < array_size; ++i) {
-//         printf("print int array: %d \n", array[i]);
-//     }
-// }
-
 void print_string_array_from_indexes(int array_size, char dates[][31], int *indexes, FILE* file){
     for (int i = 0; i < array_size; ++i) {
         printf("%s \n", dates[indexes[i]]);
@@ -207,20 +189,16 @@ void plot_data(float array[], int array_size, float min, float max, FILE* file1)
         for (int i = 0; i < array_size; ++i) {
 
             if(array[i]==max){
-                printf("|");
-                fprintf(file1, "|");
+                print_write_string("|", file1);
             }else if(array[i]>intervals[j]){
-                printf("|");
-                fprintf(file1, "|");
+                print_write_string("|", file1);
             }else {
-                printf(" ");
-                fprintf(file1, " ");
+                print_write_string(" ", file1);
             }
 
         }
 
-        printf("\n");
-        fprintf(file1, "\n");
+        print_write_string("\n", file1);
     }
 
 }
@@ -254,14 +232,6 @@ int values_between(float array[], int array_size, float floor, float ceil){
             qty++;
         }
     }
-
-    // for (int i = 0; i < array_size; ++i) {
-    //     if(less_than(array, array_size, ceil) && more_than(array, array_size, floor)){
-    //         qty++;
-    //     } else if(equals(array, array_size, ceil)) {
-    //         qty++;
-    //     }
-    // }
 
     return qty;
 
