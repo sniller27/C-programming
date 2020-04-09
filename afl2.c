@@ -159,12 +159,19 @@ int main(int argc,char *argv[])
     print_write_string("Temperature January 2011(sorted): \n", output_file);
 
     //selection sort (ascending) (this would cause a problem since the weather values are sorted but not the respective dates)
-    // float y_2011_01_temp_sorted[31];
-    selectionsort(y_2011.temperature.weather_value, TEMP_2011_1_SIZE);
-    print_write_float_array(TEMP_2011_1_SIZE, y_2011.temperature.weather_value, output_file);
+    float y_2011_01_temp_sorted[TEMP_2011_1_SIZE];
+
+    //assign array to weather values
+    memcpy(&y_2011_01_temp_sorted, &y_2011.temperature.weather_value, sizeof y_2011_01_temp_sorted);
+
+    //sort array by using selection sort
+    selectionsort(y_2011_01_temp_sorted, TEMP_2011_1_SIZE);
+
+    //print array (by iterating through it in function)
+    print_write_float_array(TEMP_2011_1_SIZE, y_2011_01_temp_sorted, output_file);
 
     //printing median
-    print_write_float("Median: %-*.2f  \n", get_median(y_2011.temperature.weather_value, TEMP_2011_1_SIZE), output_file);
+    print_write_float("Median: %-*.2f  \n", get_median(y_2011_01_temp_sorted, TEMP_2011_1_SIZE), output_file);
 
     //close file pointer
     fclose(output_file);
