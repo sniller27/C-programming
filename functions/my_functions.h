@@ -261,8 +261,12 @@ void compare_temperature_years(int array_size, struct Year year1, struct Year ye
 
 }
 
-//function can be extended with parameter that determines equal values
-int values_between(float array[], int array_size, float floor, float ceil){
+/**
+ *      Objective: Returns the number of elements in a float array that are greater than a given value and less than/equal to another given value
+ *      Parameters: Receives float array and its size, given greater than float value, given less than float value
+ *      Returns value: Returns number of values (as an integer)
+ * **/
+int array_greater_than_less_equal(float array[], int array_size, float floor, float ceil){
 
     int qty = 0;
 
@@ -276,7 +280,11 @@ int values_between(float array[], int array_size, float floor, float ceil){
 
 }
 
-//this function is from the learning material (selection sort algorithm)
+/**
+ *      Objective: Selection sort algorithm (this function is from the learning material)
+ *      Parameters: Receives float array and its size.
+ *      Returns value: Return void (however the float array is sorted)
+ * **/
 void selectionsort(float a[],int n) {
 
         int pos;
@@ -300,6 +308,11 @@ void selectionsort(float a[],int n) {
         }
 }
 
+/**
+ *      Objective: Finds median or array (done by using modulo operator to determine even and odd number of elements in array)
+ *      Parameters: Receives float array and its size.
+ *      Returns value: Return median value (as a float)
+ * **/
 float get_median(float array[], int array_size){
 
     int middle_index;

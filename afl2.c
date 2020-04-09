@@ -150,7 +150,7 @@ int main(int argc,char *argv[])
     //task 10
     print_write_string("Task 10 \n", output_file);
 
-    print_write_int("Days with temperature more than 4 but less than/equal to 6 for January 2020 is: %d \n", values_between(y_2020.temperature.weather_value, TEMP_2020_1_SIZE, 4, 6), output_file);
+    print_write_int("Days with temperature more than 4 but less than/equal to 6 for January 2020 is: %d \n", array_greater_than_less_equal(y_2020.temperature.weather_value, TEMP_2020_1_SIZE, 4, 6), output_file);
     
     print_write_string("\n", output_file);
 
