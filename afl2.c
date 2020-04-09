@@ -107,7 +107,7 @@ int main(int argc,char *argv[])
 
     print_write_string("Days with more than 0 mm rain in January 2011: \n", output_file);
 
-    int indexes_2011[31], indexes_length_2011 = 0;
+    int indexes_2011[RAIN_2011_1_SIZE], indexes_length_2011 = 0;
     array_indexes_more_than(RAIN_2011_1_SIZE, y_2011.rain.weather_value, indexes_2011, 0, &indexes_length_2011);
     print_string_array_from_indexes(indexes_length_2011, y_2011.rain.date, indexes_2011, output_file);
 
@@ -115,7 +115,7 @@ int main(int argc,char *argv[])
 
     print_write_string("Days with more than 0 mm rain in January 2020: \n", output_file);
 
-    int indexes_2020[31], indexes_length_2020 = 0;
+    int indexes_2020[RAIN_2020_1_SIZE], indexes_length_2020 = 0;
     array_indexes_more_than(RAIN_2020_1_SIZE, y_2020.rain.weather_value, indexes_2020, 0, &indexes_length_2020);
     print_string_array_from_indexes(indexes_length_2020, y_2020.rain.date, indexes_2020, output_file);
     
@@ -142,7 +142,8 @@ int main(int argc,char *argv[])
     //task 9
     print_write_string("Task 9 \n", output_file);
     
-    compare_temperature_years(31, y_2011, y_2020, output_file);
+    //assumed the arrays have the same sizes (e.g. TEMP_2011_1_SIZE = 31)
+    compare_temperature_years(TEMP_2011_1_SIZE, y_2011, y_2020, output_file);
 
     print_write_string("\n", output_file);
 
