@@ -1,8 +1,8 @@
 /**
  *      Objective: Transfers data from a specified file to a string-array and a float-array
+ *      Precondition: Arrays should always have enough slots for content
  *      Parameters: Function receives array size (corresponding to number of lines in file), name of the file, string-array (2d char-array) and float array
- *      Return value: Returns void (however indirectly changes arrays, since passed arrays are populated)
- *      ARRAYS SHOULD HAVE ENOUGH SLOTS FOR CONTENT
+ *      Return value/Postcondition: Returns void (however indirectly changes arrays, since passed arrays are populated)
  * **/
 void scan_values_from_file(int size, const char *file_name, char date_array[][size], float *value_array){
 
@@ -48,7 +48,7 @@ void scan_values_from_file(int size, const char *file_name, char date_array[][si
 /**
  *      Objective: Calculates average value of array float values
  *      Parameters: Receives float array and its size
- *      Return value: Returns the average float value
+ *      Return value/Postcondition: Returns the average float value
  * **/
 float calc_avr(const float array[], int array_size){
 
@@ -64,7 +64,7 @@ float calc_avr(const float array[], int array_size){
 /**
  *      Objective: Calculates the sum value of all the values in a float array
  *      Parameters: Receives float array and its size
- *      Return value: returns sum of all array values as a float
+ *      Return value/Postcondition: returns sum of all array values as a float
  * **/
 float calc_accumulated(const float array[], int array_size){
 
@@ -80,7 +80,7 @@ float calc_accumulated(const float array[], int array_size){
 /**
  *      Objective: Counts the number of elements in a given float array that are above a given value
  *      Parameters: Receives float array, its size and a given comparison value
- *      Return value: Returns number of elements in array that are above the given value (as an integer)
+ *      Return value/Postcondition: Returns number of elements in array that are above the given value (as an integer)
  * **/
 int values_more_than(const float array[], int array_size, float value){
 
@@ -98,7 +98,7 @@ int values_more_than(const float array[], int array_size, float value){
 /**
  *      Objective: Counts the number of elements in a given float array that are under a given value
  *      Parameters: Receives float array, its size and a given comparison value
- *      Return value: Returns number of elements in array that are under the given value (as an integer)
+ *      Return value/Postcondition: Returns number of elements in array that are under the given value (as an integer)
  * **/
 int values_less_than(const float array[], int array_size, float value){
 
@@ -116,7 +116,7 @@ int values_less_than(const float array[], int array_size, float value){
 /**
  *      Objective: Counts the number of elements in a given float array that equal a given value
  *      Parameters: Receives float array, its size and a given comparison value
- *      Return value: Returns number of elements in array that equal given value (as an integer)
+ *      Return value/Postcondition: Returns number of elements in array that equal given value (as an integer)
  * **/
 int values_equals(const float array[], int array_size, float value){
 
@@ -134,7 +134,7 @@ int values_equals(const float array[], int array_size, float value){
 /**
  *      Objective: Finds and returns the max value in a float array
  *      Parameters: Receives float array and its size
- *      Return value: Returns the max value in a float array (as a float)
+ *      Return value/Postcondition: Returns the max value in a float array (as a float)
  * **/
 float list_max_value(const float array[], int array_size){
 
@@ -158,7 +158,7 @@ float list_max_value(const float array[], int array_size){
 /**
  *      Objective: Finds and returns the min value in a float array
  *      Parameters: Receives float array and its size
- *      Return value: Returns the min value in a float array (as a float)
+ *      Return value/Postcondition: Returns the min value in a float array (as a float)
  * **/
 float list_min_value(const float array[], int array_size){
 
@@ -184,7 +184,7 @@ float list_min_value(const float array[], int array_size){
  *                 stored in a integer array and number of elements are assigned to integer variable.
  *      Parameters: Receives float array and its size, an integer array for the found indexes, an integer
  *                  value for a given comarison value and a variable for length of the array of indexes.
- *      Return value: Returns void (however the integer array is populated and the length of the array is assigned an integer)
+ *      Return value/Postcondition: Returns void (however the integer array is populated and the length of the array is assigned an integer)
  * **/
 void array_indexes_more_than(int array_size, const float *array, int *indexes, int value, int *index_array_length){
     
@@ -207,7 +207,7 @@ void array_indexes_more_than(int array_size, const float *array, int *indexes, i
  *                 in nested loops (as a 2d string array).               
  *      Parameters: Receives float array and its size, minimum value as float, maximum value as float and file pointer 
  *                  (for writing to file).
- *      Return value: Returns void
+ *      Return value/Postcondition: Returns void
  **/
 void plot_data(const float array[], int array_size, float min, float max, FILE* file1){
     
@@ -252,11 +252,10 @@ void plot_data(const float array[], int array_size, float min, float max, FILE* 
 
 /**
  *      Objective: Compare temperatures in January of two different years and prints the highest temperature of each day in January.            
+ *      Precondition: This function requires given arrays to be the same size
  *      Parameters: Receives size of arrays, receives structs for each year and a file pointer 
  *                  (for writing to file).
- *      Return value: Returns void (only printing and writing to file)
- * 
- *      THIS FUNCTION REQUIRES GIVEN ARRAYS TO BE THE SAME SIZE
+ *      Return value/Postcondition: Returns void (only printing and writing to file)
  **/
 void compare_temperature_years(int array_size, struct Year year1, struct Year year2, FILE* file1){
 
