@@ -98,6 +98,7 @@ int main(int argc,char *argv[])
     //task 4
     print_write_string("Task 4 \n", output_file);
 
+    //Determining and printing highest/lowest temperatures in January 2011 and 2020 by using functions
     print_write_float("Highest temperature January 2011: %-*.2f \n", list_max_value(y_2011.temperature.weather_value, TEMP_2011_1_SIZE), output_file);
     print_write_float("Highest temperature January 2020: %-*.2f \n", list_max_value(y_2020.temperature.weather_value, TEMP_2020_1_SIZE), output_file);
     print_write_float("Lowest temperature January 2011: %-*.2f \n", list_min_value(y_2011.temperature.weather_value, TEMP_2011_1_SIZE), output_file);
@@ -108,17 +109,20 @@ int main(int argc,char *argv[])
     //task 5
     print_write_string("Task 5 \n", output_file);
 
+    //Determining and printing number of days with temperatures above average in January 2011
     print_write_int("Number of days with temperature higher than average January 2011: %d \n", values_more_than(y_2011.temperature.weather_value, TEMP_2011_1_SIZE, temp_2011_1_avr), output_file);
 
     print_write_string("\n", output_file);
 
     //task 6
     print_write_string("Task 6 \n", output_file);
-
+    
     print_write_string("Days with more than 0 mm rain in January 2011: \n", output_file);
 
     int indexes_2011[RAIN_2011_1_SIZE], indexes_length_2011 = 0;
+    //Determining days/dates with more than 0 mm rain in January 2011 (done by storing indexes in new array and integer for the size)
     array_indexes_more_than(RAIN_2011_1_SIZE, y_2011.rain.weather_value, indexes_2011, 0, &indexes_length_2011);
+    //Printing dates
     print_string_array_from_indexes(indexes_length_2011, y_2011.rain.date, indexes_2011, output_file);
 
     print_write_string("\n", output_file);
@@ -126,7 +130,9 @@ int main(int argc,char *argv[])
     print_write_string("Days with more than 0 mm rain in January 2020: \n", output_file);
 
     int indexes_2020[RAIN_2020_1_SIZE], indexes_length_2020 = 0;
+    //Determining days/dates with more than 0 mm rain in January 2020 (done by storing indexes in new array and integer for the size)
     array_indexes_more_than(RAIN_2020_1_SIZE, y_2020.rain.weather_value, indexes_2020, 0, &indexes_length_2020);
+    //Printing dates
     print_string_array_from_indexes(indexes_length_2020, y_2020.rain.date, indexes_2020, output_file);
     
     print_write_string("\n", output_file);
@@ -134,8 +140,10 @@ int main(int argc,char *argv[])
     //task 7
     print_write_string("Task 7 \n", output_file);
 
+    //Calculating and printing average rain in January 2020
     float rain_2020_1_avr = calc_avr(y_2020.rain.weather_value, RAIN_2020_1_SIZE);
     print_write_float("The average rain January 2020: %-*.2f \n", rain_2020_1_avr, output_file);
+    //Calculating and printing number of days with less rain than average in January 2020 (calculation based on average rain value from above)
     print_write_int("Number of days with less rain than average January 2020: %d \n", values_less_than(y_2020.rain.weather_value, RAIN_2020_1_SIZE, rain_2020_1_avr), output_file);
 
     print_write_string("\n", output_file);
@@ -145,6 +153,7 @@ int main(int argc,char *argv[])
 
     print_write_string("Rain January 2011: \n \n", output_file);
 
+    //Plots diagram (by passing rain values, min rain value and max rain value)
     plot_data(y_2011.rain.weather_value, RAIN_2011_1_SIZE, list_min_value(y_2011.rain.weather_value, RAIN_2011_1_SIZE), list_max_value(y_2011.rain.weather_value, RAIN_2011_1_SIZE), output_file);
     
     print_write_string("\n", output_file);
@@ -152,7 +161,7 @@ int main(int argc,char *argv[])
     //task 9
     print_write_string("Task 9 \n", output_file);
     
-    //assumed the arrays have the same sizes (e.g. TEMP_2011_1_SIZE = 31)
+    //Compares and printing temperatures. Assumed the arrays have the same sizes in the structs (e.g. TEMP_2011_1_SIZE = 31).
     compare_temperature_years(TEMP_2011_1_SIZE, y_2011, y_2020, output_file);
 
     print_write_string("\n", output_file);
@@ -160,6 +169,7 @@ int main(int argc,char *argv[])
     //task 10
     print_write_string("Task 10 \n", output_file);
 
+    //Calculating and priting days with temperatures more than 4 but less/equal to 6 in January 2020 (done by passing temperatures to function)
     print_write_int("Days with temperature more than 4 but less than/equal to 6 for January 2020 is: %d \n", array_greater_than_less_equal(y_2020.temperature.weather_value, TEMP_2020_1_SIZE, 4, 6), output_file);
     
     print_write_string("\n", output_file);
@@ -168,7 +178,7 @@ int main(int argc,char *argv[])
     print_write_string("Task 11 \n", output_file);
     print_write_string("Temperature January 2011(sorted): \n", output_file);
 
-    //selection sort (ascending) (this would cause a problem since the weather values are sorted but not the respective dates)
+    //declare new array (in order to avoid inconsistency in struct if it were sorted directly)
     float y_2011_01_temp_sorted[TEMP_2011_1_SIZE];
 
     //assign array to weather values
