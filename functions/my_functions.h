@@ -2,8 +2,9 @@
  *      Objective: Transfers data from a specified file to a string-array and a float-array
  *      Parameters: Function receives array size (corresponding to number of lines in file), name of the file, string-array (2d char-array) and float array
  *      Return value: Returns void (however indirectly changes arrays, since passed arrays are populated)
+ *      ARRAYS SHOULD HAVE ENOUGH SLOTS FOR CONTENT
  * **/
-void scan_values_from_file(int size, char *file_name, char date_array[][size], float *value_array){
+void scan_values_from_file(int size, const char *file_name, char date_array[][size], float *value_array){
 
     float weather_value = 0;
 
@@ -19,7 +20,7 @@ void scan_values_from_file(int size, char *file_name, char date_array[][size], f
     //instatiate filepointer instance (one for reading and one for writing)
     FILE* read_data = fopen(file_path,"r");
 
-    // error checking filepointers
+    // error checking filepointer
     if (read_data==NULL) 
     { 
         printf("no such file."); 
@@ -49,7 +50,7 @@ void scan_values_from_file(int size, char *file_name, char date_array[][size], f
  *      Parameters: Receives float array and its size
  *      Return value: Returns the average float value
  * **/
-float calc_avr(float array[], int array_size){
+float calc_avr(const float array[], int array_size){
 
     float sum = 0;
 
@@ -65,7 +66,7 @@ float calc_avr(float array[], int array_size){
  *      Parameters: Receives float array and its size
  *      Return value: returns sum of all array values as a float
  * **/
-float calc_accumulated(float array[], int array_size){
+float calc_accumulated(const float array[], int array_size){
 
     float sum = 0;
 
@@ -81,7 +82,7 @@ float calc_accumulated(float array[], int array_size){
  *      Parameters: Receives float array, its size and a given comparison value
  *      Return value: Returns number of elements in array that are above the given value (as an integer)
  * **/
-int values_more_than(float array[], int array_size, float value){
+int values_more_than(const float array[], int array_size, float value){
 
     int qty = 0;
 
@@ -99,7 +100,7 @@ int values_more_than(float array[], int array_size, float value){
  *      Parameters: Receives float array, its size and a given comparison value
  *      Return value: Returns number of elements in array that are under the given value (as an integer)
  * **/
-int values_less_than(float array[], int array_size, float value){
+int values_less_than(const float array[], int array_size, float value){
 
     int qty = 0;
 
@@ -117,7 +118,7 @@ int values_less_than(float array[], int array_size, float value){
  *      Parameters: Receives float array, its size and a given comparison value
  *      Return value: Returns number of elements in array that equal given value (as an integer)
  * **/
-int values_equals(float array[], int array_size, float value){
+int values_equals(const float array[], int array_size, float value){
 
     int qty = 0;
 
@@ -135,7 +136,7 @@ int values_equals(float array[], int array_size, float value){
  *      Parameters: Receives float array and its size
  *      Return value: Returns the max value in a float array (as a float)
  * **/
-float list_max_value(float array[], int array_size){
+float list_max_value(const float array[], int array_size){
 
     float max;
     
@@ -159,7 +160,7 @@ float list_max_value(float array[], int array_size){
  *      Parameters: Receives float array and its size
  *      Return value: Returns the min value in a float array (as a float)
  * **/
-float list_min_value(float array[], int array_size){
+float list_min_value(const float array[], int array_size){
 
     float min;
 
@@ -185,7 +186,7 @@ float list_min_value(float array[], int array_size){
  *                  value for a given comarison value and a variable for length of the array of indexes.
  *      Return value: Returns void (however the integer array is populated and the length of the array is assigned an integer)
  * **/
-void array_indexes_more_than(int array_size, float *array, int *indexes, int value, int *index_array_length){
+void array_indexes_more_than(int array_size, const float *array, int *indexes, int value, int *index_array_length){
     
     int counter = 0;
     
@@ -208,7 +209,7 @@ void array_indexes_more_than(int array_size, float *array, int *indexes, int val
  *                  (for writing to file).
  *      Return value: Returns void
  **/
-void plot_data(float array[], int array_size, float min, float max, FILE* file1){
+void plot_data(const float array[], int array_size, float min, float max, FILE* file1){
     
     //diagram height can be changed depending on the plot accuracy wanted
     int diagram_height = 10;
@@ -281,7 +282,7 @@ void compare_temperature_years(int array_size, struct Year year1, struct Year ye
  *      Parameters: Receives float array and its size, given greater than float value, given less than float value
  *      Returns value: Returns number of values (as an integer)
  * **/
-int array_greater_than_less_equal(float array[], int array_size, float floor, float ceil){
+int array_greater_than_less_equal(const float array[], int array_size, float floor, float ceil){
 
     int qty = 0;
 
@@ -328,7 +329,7 @@ void selectionsort(float a[],int n) {
  *      Parameters: Receives float array and its size.
  *      Returns value: Return median value (as a float)
  * **/
-float get_median(float array[], int array_size){
+float get_median(const float array[], int array_size){
 
     int middle_index;
     float middle_average;
