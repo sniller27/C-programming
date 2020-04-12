@@ -183,15 +183,37 @@ float list_min_value(const float array[], int array_size){
  *      Objective: Finds values in float array that are more than a given value. Indexes of found values are
  *                 stored in a integer array and number of elements are assigned to integer variable.
  *      Parameters: Receives float array and its size, an integer array for the found indexes, an integer
- *                  value for a given comarison value and a variable for length of the array of indexes.
+ *                  value for a given comparison value and a variable for length of the array of indexes.
  *      Return value/Postcondition: Returns void (however the integer array is populated and the length of the array is assigned an integer)
  * **/
-void array_indexes_more_than(int array_size, const float *array, int *indexes, int value, int *index_array_length){
+void array_indexes_more_than(int array_size, const float *array, int value, int *indexes, int *index_array_length){
     
     int counter = 0;
     
     for (int i = 0; i < array_size; ++i) {
         if (array[i]>value) {
+            indexes[counter] = i;
+            counter++;
+        }
+    }
+
+    *index_array_length = counter;
+
+}
+
+/**
+ *      Objective: Finds values in in both float arrays that are more than a given value. Indexes of found values are
+ *                 stored in a integer array and number of elements are assigned to integer variable.
+ *      Parameters: Receives two float arrays and their same size, an integer array for the found indexes, an integer
+ *                  value for a given comparison value and a variable for length of the array of indexes.
+ *      Return value/Postcondition: Returns void (however the integer array is populated and the length of the array is assigned an integer)
+ * **/
+void array_indexes_more_than_both(int array_size, const float *array, const float *array2, int value, int *indexes, int *index_array_length){
+    
+    int counter = 0;
+    
+    for (int i = 0; i < array_size; ++i) {
+        if (array[i]>value && array2[i]>value) {
             indexes[counter] = i;
             counter++;
         }

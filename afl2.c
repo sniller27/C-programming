@@ -121,7 +121,7 @@ int main(int argc,char *argv[])
 
     int indexes_2011[RAIN_2011_1_SIZE], indexes_length_2011 = 0;
     //Determining days/dates with more than 0 mm rain in January 2011 (done by storing indexes in new array and integer for the size)
-    array_indexes_more_than(RAIN_2011_1_SIZE, y_2011.rain.weather_value, indexes_2011, 0, &indexes_length_2011);
+    array_indexes_more_than(RAIN_2011_1_SIZE, y_2011.rain.weather_value, 0, indexes_2011, &indexes_length_2011);
     //Printing dates
     print_string_array_from_indexes(indexes_length_2011, y_2011.rain.date, indexes_2011, output_file);
 
@@ -131,10 +131,20 @@ int main(int argc,char *argv[])
 
     int indexes_2020[RAIN_2020_1_SIZE], indexes_length_2020 = 0;
     //Determining days/dates with more than 0 mm rain in January 2020 (done by storing indexes in new array and integer for the size)
-    array_indexes_more_than(RAIN_2020_1_SIZE, y_2020.rain.weather_value, indexes_2020, 0, &indexes_length_2020);
+    array_indexes_more_than(RAIN_2020_1_SIZE, y_2020.rain.weather_value, 0, indexes_2020, &indexes_length_2020);
     //Printing dates
     print_string_array_from_indexes(indexes_length_2020, y_2020.rain.date, indexes_2020, output_file);
     
+    print_write_string("\n", output_file);
+
+    print_write_string("For both: \n", output_file);
+
+    int indexes_both[RAIN_2011_1_SIZE], indexes_length_both = 0;
+    //Determining days/dates with more than 0 mm rain in January 2011 (done by storing indexes in new array and integer for the size)
+    array_indexes_more_than_both(RAIN_2011_1_SIZE, y_2011.rain.weather_value, y_2020.rain.weather_value, 0, indexes_both, &indexes_length_both);
+    //Printing dates
+    print_string_array_from_indexes(indexes_length_both, y_2011.rain.date, indexes_both, output_file);
+
     print_write_string("\n", output_file);
 
     //task 7
