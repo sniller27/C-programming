@@ -252,3 +252,26 @@ void print_students_with_top_grade(int size, struct Student students[]){
     }
 
 }
+
+float print_avr_grade_students_total(int size, struct Student students[]){
+
+    float student_grade_sum;
+    float students_avr;
+
+    for (int i = 0; i < size; i++)
+    {
+        student_grade_sum = 0;
+
+        for (int j = 0; j < students[i].no_of_grades; j++)
+        {
+            student_grade_sum += students[i].grades[j];
+        }
+
+        // float student_avg_grade = student_grade_sum/students[i].no_of_grades;
+        // printf("avr: %-*.2f  \n", 20, student_avg_grade);
+        students_avr += student_grade_sum/students[i].no_of_grades;
+    }
+
+    return students_avr/size;
+
+}

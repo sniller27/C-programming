@@ -59,6 +59,14 @@ int main(int argc,char *argv[])
 
     print_students_with_top_grade(10, students);
 
+    printf("\n");
+
+    printf("TASK 6 \n");
+
+    printf("Average grade of all students: %-*.2f  \n", 20, print_avr_grade_students_total(10, students));
+
+    printf("\n");
+
     // print_write_string("\n", output_file);
 
     return 0;
