@@ -163,3 +163,38 @@ void print_highest_grade_info(int size, struct Student students[]){
 }
 
 
+void print_value_below_avr_grade_info(int size, struct Student students[], int value){
+
+    int highest_grade_indexes[size];
+    int index_counter = 0;
+
+    float highest_grade_avr;
+
+    float total_grade;
+    float grade_avr;
+
+    for (int i = 0; i < size; i++)
+    {
+        total_grade = 0;
+
+        for (int j = 0; j < students[i].no_of_grades; j++)
+        {
+            // printf("%d  \n", students[i].grades[j]);
+            total_grade += students[i].grades[j];
+        }
+
+        // printf("total: %-*.2f  \n", 20, total_grade);
+        grade_avr = total_grade/students[i].no_of_grades;
+
+        if(grade_avr < value){
+            //print_info
+            print_student_data(1, &students[i]);
+        }
+
+    }
+
+}
+
+
+
+

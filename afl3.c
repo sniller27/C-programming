@@ -26,7 +26,7 @@ int main(int argc,char *argv[])
     
     printf("TASK 1 \n");
     printf("\n");
-    
+
     get_student_data(10, "tekstfil", students);
     print_student_data(10, students);
 
@@ -35,9 +35,16 @@ int main(int argc,char *argv[])
     printf("TASK 2 \n");
     print_highest_grade_info(10, students);
 
-    // print_write_string("\n", output_file);
+    printf("\n");
 
-    //TASK 1
+    printf("TASK 3 \n");
+
+    printf("Students with grades below avg. 2 grade: \n");
+    printf("\n");
+    
+    print_value_below_avr_grade_info(10, students, 2);
+
+    // print_write_string("\n", output_file);
 
     return 0;
 }
