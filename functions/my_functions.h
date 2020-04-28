@@ -93,17 +93,17 @@ void get_student_data(int size, const char *file_name, struct Student students[]
         students[counter].grades[2] = grade3;
 
         // print check
-        printf("student no: %s \n", student_no);
-        printf("first name: %s \n", firstname);
-        printf("last name: %s \n", lastname);
-        printf("phone: %d \n", phone);
+        // printf("student no: %s \n", student_no);
+        // printf("first name: %s \n", firstname);
+        // printf("last name: %s \n", lastname);
+        // printf("phone: %d \n", phone);
 
-        printf("grade1: %d \n", students[counter].grades[0]);
-        printf("grade2: %d \n", students[counter].grades[1]);
-        printf("grade3: %d \n", students[counter].grades[2]);
+        // printf("grade1: %d \n", students[counter].grades[0]);
+        // printf("grade2: %d \n", students[counter].grades[1]);
+        // printf("grade3: %d \n", students[counter].grades[2]);
 
-        printf("\n");
-        printf("\n");
+        // printf("\n");
+        // printf("\n");
 
         counter++;
     }
@@ -113,5 +113,25 @@ void get_student_data(int size, const char *file_name, struct Student students[]
 
     //close file connections
     fclose(read_data);
+    
+}
+
+void print_student_data(int size, struct Student students[]){
+
+    for (int i = 0; i < size; i++)
+    {
+        printf("student no: %s \n", students[i].student_no);
+        printf("first name: %s \n", students[i].firstname);
+        printf("last name: %s \n", students[i].lastname);
+        printf("phone: %d \n", students[i].phone);
+
+        printf("grade1: %d \n", students[i].grades[0]);
+        printf("grade2: %d \n", students[i].grades[1]);
+        printf("grade3: %d \n", students[i].grades[2]);
+
+        printf("\n");
+    }
+    
+    
     
 }
