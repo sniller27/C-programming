@@ -41,8 +41,17 @@ int main(int argc,char *argv[])
 
     printf("Students with grades below avg. 2 grade: \n");
     printf("\n");
-    
+
     print_value_below_avr_grade_info(10, students, 2);
+
+    printf("\n");
+
+    printf("TASK 4 \n");
+
+    printf("Students with grades above avg. 2 grade: \n");
+    printf("\n");
+    
+    print_value_above_avr_grade_info(10, students, 2);
 
     // print_write_string("\n", output_file);
 
