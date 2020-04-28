@@ -6,4 +6,5 @@ struct Student {
     int phone;
     int grades[50];
     int no_of_grades;
+    float avr_grade;
 };

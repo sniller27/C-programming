@@ -82,6 +82,13 @@ int main(int argc,char *argv[])
 
     printf("\n");
 
+    printf("TASK 9 \n");
+
+    selectionsort_by_avrgrade(students, 10);
+    print_student_data(10, students);
+
+    printf("\n");
+
     // int result = strcmp("gog", "bil");
     // printf("strcmp(str1, str2) = %d\n", result);
 

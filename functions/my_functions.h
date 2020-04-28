@@ -112,6 +112,8 @@ void print_highest_grade_info(int size, struct Student students[]){
 
         // printf("total: %-*.2f  \n", 20, total_grade);
         grade_avr = total_grade/students[i].no_of_grades;
+
+        students[i].avr_grade = grade_avr;
         // printf("index: %d  \n", i);
         // printf("avr: %-*.2f  \n", 20, grade_avr);
 
@@ -287,26 +289,6 @@ void search_students_lastname(int size, struct Student students[], char lastname
 
 }
 
-void swap2(struct Student **A, struct Student **B){
-    // struct Student *temp = *A;
-    // *A = *B;
-    // *B = temp;
-}
-
-void swap(struct Student *a, struct Student *b)
-{
-    struct Student t = *a;
-    *a = *b;
-    *b = t;
-}
-
-
-void swap1(struct Student *A, struct Student *B){
-    struct Student temp = *A;
-    *A = *B;
-    *B = temp;
-}
-
 void selectionsort_by_firstname(struct Student a[],int n) {
 
         int pos;
@@ -336,3 +318,31 @@ void selectionsort_by_firstname(struct Student a[],int n) {
         }
 }
 
+void selectionsort_by_avrgrade(struct Student a[],int n) {
+
+        int pos;
+        struct Student gem;
+
+        for(int i=0; i<n-1; i++) {
+
+            pos=i;
+
+            //finding lowest index
+            for(int j=i+1;j<n;j++){
+
+                if(a[pos].avr_grade > a[j].avr_grade){
+                    pos=j;
+                }
+
+            }
+
+            //swapping indexes
+            if(pos!=i){
+
+                struct Student tmp = a[i];
+                a[i] = a[pos];
+                a[pos] = tmp;
+
+            }
+        }
+}
