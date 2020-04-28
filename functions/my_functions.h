@@ -47,19 +47,16 @@ void get_student_data(int size, const char *file_name, struct Student student){
 
     float weather_value = 0;
 
-    // int phone;
+    int phone, grade1, grade2, grade3;
 
     char file_path[80],
         // header_1[255],
         // header_2[255],
         student_no[50],
         firstname[255],
-        phone[20],
-        lastname[255],
+        // phone[20],
+        lastname[255]
         
-        grade1[5],
-        grade2[5],
-        grade3[5]
         
         
         ;
@@ -82,25 +79,26 @@ void get_student_data(int size, const char *file_name, struct Student student){
 
     int counter = 0;
 
-    while(fscanf(read_data, "%s %s %s %s %s %s %s", student_no, firstname, lastname, phone, grade1, grade2, grade3)!=EOF){
+    while(fscanf(read_data, "%s %s %s %d %d %d %d", student_no, firstname, lastname, &phone, &grade1, &grade2, &grade3)!=EOF){
 
         // strcpy(date_array[counter], date);
 
         // value_array[counter]=weather_value;
 
-        // printf("looping \n"); 
+        // printf("looping \n");
         
         
         // printf("student no: %d \n", student_no);
         printf("student no: %s \n", student_no);
         printf("first name: %s \n", firstname);
         printf("last name: %s \n", lastname);
-        printf("phone: %s \n", phone);
+        
+        printf("phone: %d \n", phone);
 
         //grades
-        printf("grade1: %s \n", grade1);
-        printf("grade2: %s \n", grade2);
-        printf("grade3: %s \n", grade3);
+        printf("grade1: %d \n", grade1);
+        printf("grade2: %d \n", grade2);
+        printf("grade3: %d \n", grade3);
 
         printf("\n");
         printf("\n");
