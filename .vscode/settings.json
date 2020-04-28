@@ -2,6 +2,7 @@
     "files.associations": {
         "my_functions.h": "c",
         "print_write_functions.h": "c",
-        "my_structs.h": "c"
+        "my_structs.h": "c",
+        "my_constants.h": "c"
     }
 }

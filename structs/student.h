@@ -5,4 +5,5 @@ struct Student {
     char lastname[1000];
     int phone;
     int grades[50];
+    int no_of_grades;
 };

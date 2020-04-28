@@ -1,47 +1,3 @@
-// void scan_values_from_file(int size, const char *file_name, char date_array[][size], float *value_array){
-
-//     float weather_value = 0;
-
-//     char file_path[80],
-//         header_1[255],
-//         header_2[255],
-//         date[255];
-
-//     strcpy(file_path, "data/");
-//     strcat(file_path, file_name);
-//     strcat(file_path, ".txt");
-
-//     //instatiate filepointer instance (one for reading and one for writing)
-//     FILE* read_data = fopen(file_path,"r");
-
-//     // error checking filepointer
-//     if (read_data==NULL) 
-//     { 
-//         printf("no such file."); 
-//     }
-
-//     //reading headers from 1st line in file and save them to variables
-//     fscanf(read_data, "%s %s", header_1, header_2);
-
-//     int counter = 0;
-
-//     while(fscanf(read_data, "%s %f", date, &weather_value)!=EOF){
-
-//         strcpy(date_array[counter], date);
-
-//         value_array[counter]=weather_value;
-
-//         // printf("looping \n"); 
-//         // printf("val: %-*.2f \n", 20, value_array[counter]);
-//         printf("%s \n", date);
-
-//         counter++;
-//     }
-
-//     //close file connections
-//     fclose(read_data);
-    
-// }
 
 void get_student_data(int size, const char *file_name, struct Student students[]){
 
@@ -92,18 +48,7 @@ void get_student_data(int size, const char *file_name, struct Student students[]
         students[counter].grades[1] = grade2;
         students[counter].grades[2] = grade3;
 
-        // print check
-        // printf("student no: %s \n", student_no);
-        // printf("first name: %s \n", firstname);
-        // printf("last name: %s \n", lastname);
-        // printf("phone: %d \n", phone);
-
-        // printf("grade1: %d \n", students[counter].grades[0]);
-        // printf("grade2: %d \n", students[counter].grades[1]);
-        // printf("grade3: %d \n", students[counter].grades[2]);
-
-        // printf("\n");
-        // printf("\n");
+        students[counter].no_of_grades = 3;
 
         counter++;
     }
@@ -132,6 +77,89 @@ void print_student_data(int size, struct Student students[]){
         printf("\n");
     }
     
-    
-    
 }
+
+
+void print_highest_grade_info(int size, struct Student students[]){
+
+    int highest_grade_indexes[size];
+    int index_counter = 0;
+
+    float highest_grade_avr;
+
+    float total_grade;
+    float grade_avr;
+
+    for (int i = 0; i < size; i++)
+    {
+        total_grade = 0;
+
+        // printf("%d  \n", students[i].grades[0]);
+        // printf("%d  \n", students[i].grades[1]);
+        // printf("%d  \n", students[i].grades[2]);
+
+        // printf("\n");
+
+        // printf("%d  \n", sizeof(students[i].grades));
+
+        // printf("HEELLO");
+
+        for (int j = 0; j < students[i].no_of_grades; j++)
+        {
+            // printf("%d  \n", students[i].grades[j]);
+            total_grade += students[i].grades[j];
+        }
+
+        // printf("total: %-*.2f  \n", 20, total_grade);
+        grade_avr = total_grade/students[i].no_of_grades;
+        // printf("index: %d  \n", i);
+        // printf("avr: %-*.2f  \n", 20, grade_avr);
+
+        // printf("%-*.2f  \n", 20, grade_avr);
+        if(i==0){
+            highest_grade_avr = grade_avr;
+            highest_grade_indexes[index_counter] = i;
+            index_counter++;
+        }
+
+        if(grade_avr > highest_grade_avr){
+            highest_grade_avr = grade_avr;
+            //empty array indexes
+
+            //new index counter
+            index_counter = 0;
+
+            //new max value
+            highest_grade_indexes[index_counter] = i;
+
+            index_counter++;
+        } else if(grade_avr == highest_grade_avr){
+            //add to indexes
+            highest_grade_indexes[index_counter] = i;
+            index_counter++;
+        }
+
+    }
+
+    printf("\n");
+
+    printf("Student(s) highest average grade: \n");
+
+    //shoule probably be moved somehow
+    for (int i = 0; i < index_counter; i++)
+    {
+        printf("student no: %s \n", students[highest_grade_indexes[i]].student_no);
+        printf("first name: %s \n", students[highest_grade_indexes[i]].firstname);
+        printf("last name: %s \n", students[highest_grade_indexes[i]].lastname);
+        printf("phone: %d \n", students[highest_grade_indexes[i]].phone);
+
+        printf("grade1: %d \n", students[highest_grade_indexes[i]].grades[0]);
+        printf("grade2: %d \n", students[highest_grade_indexes[i]].grades[1]);
+        printf("grade3: %d \n", students[highest_grade_indexes[i]].grades[2]);
+
+        printf("\n");
+    }
+
+}
+
+
