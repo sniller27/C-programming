@@ -74,6 +74,29 @@ int main(int argc,char *argv[])
     search_students_lastname(10, students, "Hansen");
 
     printf("\n");
+    
+    printf("TASK 8 \n");
+
+    selectionsort_by_firstname(students, 10);
+    print_student_data(10, students);
+
+    printf("\n");
+
+    // int result = strcmp("gog", "bil");
+    // printf("strcmp(str1, str2) = %d\n", result);
+
+    // if(strcmp("gog", "bil")){
+    //     printf("last lowest");
+    // }
+
+    // int result2 = strcmp("bil", "gog");
+    // printf("strcmp(str1, str2) = %d\n", result2);
+
+    // int result3 = strcmp("bil", "bil");
+    // printf("strcmp(str1, str2) = %d\n", result3);
+
+    // int result4 = strcmp("bil", "bila");
+    // printf("strcmp(str1, str2) = %d\n", result4);
 
     // print_write_string("\n", output_file);
 
