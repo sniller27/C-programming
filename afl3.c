@@ -67,6 +67,14 @@ int main(int argc,char *argv[])
 
     printf("\n");
 
+    printf("TASK 7 \n");
+
+    printf("Info about all students with lastname Hansen (solely): \n");
+
+    search_students_lastname(10, students, "Hansen");
+
+    printf("\n");
+
     // print_write_string("\n", output_file);
 
     return 0;
