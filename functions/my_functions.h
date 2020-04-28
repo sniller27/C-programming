@@ -228,3 +228,27 @@ void print_value_above_avr_grade_info(int size, struct Student students[], int v
 }
 
 
+void print_students_with_top_grade(int size, struct Student students[]){
+
+    int grade_occurence = 0;
+
+    for (int i = 0; i < size; i++)
+    {
+        grade_occurence = 0;
+
+        for (int j = 0; j < students[i].no_of_grades; j++)
+        {
+            if(students[i].grades[j] == 12){
+                grade_occurence++;
+            }
+        }
+
+        if(grade_occurence > 0) {
+            print_student_data(1, &students[i]);
+            printf("%s has %d max grades in total \n", students[i].firstname, grade_occurence);
+            printf("\n");
+        }
+
+    }
+
+}

@@ -53,6 +53,12 @@ int main(int argc,char *argv[])
     
     print_value_above_avr_grade_info(10, students, 2);
 
+    printf("\n");
+
+    printf("TASK 5 \n");
+
+    print_students_with_top_grade(10, students);
+
     // print_write_string("\n", output_file);
 
     return 0;
