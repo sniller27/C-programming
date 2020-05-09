@@ -61,14 +61,15 @@ int main(int argc,char *argv[])
 
     printf("\n");
 
-    // printf("TASK 4 \n");
+    printf("TASK 4 \n");
 
-    // printf("Students with grades above avg. 2 grade: \n");
-    // printf("\n");
+    printf("\n");
     
-    // print_value_above_avr_grade_info(10, students, 2);
+    int number_of_students = print_value_above_avr_grade_info(a.used, a.array, 2);
 
-    // printf("\n");
+    printf("Number of students with avg. grade above avg. 2 grade: %d \n", number_of_students);
+
+    printf("\n");
 
     // printf("TASK 5 \n");
 
@@ -168,7 +169,7 @@ int main(int argc,char *argv[])
     
     // a = get_student_data2("tekstfil");
 
-
+    printf("\n");
 
     selectionsort_by_firstname(a.array, a.used);
 
