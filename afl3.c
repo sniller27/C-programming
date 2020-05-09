@@ -22,20 +22,36 @@ int main(int argc,char *argv[])
     //TASK 1
 
     //assigning data to Student structs
-    struct Student students[10];
+    // struct Student students[10];
+
+    Array a;
+    initArray(&a, 5);
     
-    // printf("TASK 1 \n");
-    // printf("\n");
+    a = get_student_data2("tekstfil");
+    
+    printf("TASK 1 \n");
+
+    print_student_data(a.used, a.array);
+
+    printf("\n");
 
     // get_student_data(10, "tekstfil", students);
+
     // print_student_data(10, students);
 
-    // printf("\n");
+    printf("\n");
 
-    // printf("TASK 2 \n");
-    // print_highest_grade_info(10, students);
+    printf("TASK 2 \n");
 
-    // printf("\n");
+    int array_size, highest_grades_indexes[10];
+    print_highest_grade_info(a.used, a.array, highest_grades_indexes, &array_size);
+
+    printf("\n");
+
+    printf("Student(s) with highest average grade: \n");
+    print_student_data_index(array_size, a.array, highest_grades_indexes);
+
+    printf("\n");
 
     // printf("TASK 3 \n");
 
@@ -148,11 +164,17 @@ int main(int argc,char *argv[])
     // printf("size: %d\n", a.size);  // print number of elements
     // freeArray(&a);
 
-    Array a;
-    initArray(&a, 5); 
+    // Array a;
+    // initArray(&a, 5); 
     
-    a = get_student_data2("tekstfil");
+    // a = get_student_data2("tekstfil");
+
+
+
     selectionsort_by_firstname(a.array, a.used);
+
+
+
     // print_student_data(a.used, a.array);
 
     // print_student_data(10, students);

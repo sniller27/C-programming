@@ -262,90 +262,85 @@ void print_student_data(int size, struct Student students[]){
     
 }
 
+void print_student_data_index(int size, struct Student students[], int indexes[]){
 
-// void print_highest_grade_info(int size, struct Student students[]){
+    for (int i = 0; i < size; i++)
+    {
+        printf("student no: %s \n", students[indexes[i]].student_no);
+        printf("first name: %s \n", students[indexes[i]].firstname);
+        printf("last name: %s \n", students[indexes[i]].lastname);
+        printf("phone: %d \n", students[indexes[i]].phone);
 
-//     int highest_grade_indexes[size];
-//     int index_counter = 0;
+        for (int j = 0; j < students[indexes[i]].grades.used; j++)
+        {
+            printf("grade: %d \n", students[indexes[i]].grades.array[j]);
+        }
 
-//     float highest_grade_avr;
+        printf("\n");
+    }
+    
+}
 
-//     float total_grade;
-//     float grade_avr;
+float calc_avg_grade(struct Student students){
 
-//     for (int i = 0; i < size; i++)
-//     {
-//         total_grade = 0;
+    float total_grade = 0, grade_avr;
 
-//         // printf("%d  \n", students[i].grades[0]);
-//         // printf("%d  \n", students[i].grades[1]);
-//         // printf("%d  \n", students[i].grades[2]);
+    for (int j = 0; j < students.no_of_grades; j++)
+    {
+        total_grade += students.grades.array[j];
+    }
 
-//         // printf("\n");
+    grade_avr = total_grade/students.no_of_grades;
 
-//         // printf("%d  \n", sizeof(students[i].grades));
+    students.avr_grade = grade_avr;
+    
+    return grade_avr;
+}
 
-//         // printf("HEELLO");
 
-//         for (int j = 0; j < students[i].no_of_grades; j++)
-//         {
-//             // printf("%d  \n", students[i].grades[j]);
-//             total_grade += students[i].grades[j];
-//         }
+void print_highest_grade_info(int size, struct Student students[], int highest_grade_indexes[size], int *array_size){
 
-//         // printf("total: %-*.2f  \n", 20, total_grade);
-//         grade_avr = total_grade/students[i].no_of_grades;
+    int index_counter = 0;
 
-//         students[i].avr_grade = grade_avr;
-//         // printf("index: %d  \n", i);
-//         // printf("avr: %-*.2f  \n", 20, grade_avr);
+    float highest_grade_avr, 
+    grade_avr;
 
-//         // printf("%-*.2f  \n", 20, grade_avr);
-//         if(i==0){
-//             highest_grade_avr = grade_avr;
-//             highest_grade_indexes[index_counter] = i;
-//             index_counter++;
-//         }
+    for (int i = 0; i < size; i++)
+    {
+        if(!students[i].avr_grade){
+            students[i].avr_grade = calc_avg_grade(students[i]);
+        }
 
-//         if(grade_avr > highest_grade_avr){
-//             highest_grade_avr = grade_avr;
-//             //empty array indexes
+        grade_avr = students[i].avr_grade;
 
-//             //new index counter
-//             index_counter = 0;
+        if(i==0){
+            highest_grade_avr = grade_avr;
+            highest_grade_indexes[index_counter] = i;
+            index_counter++;
+        }
 
-//             //new max value
-//             highest_grade_indexes[index_counter] = i;
+        if(grade_avr > highest_grade_avr){
+            highest_grade_avr = grade_avr;
+            //empty array indexes
 
-//             index_counter++;
-//         } else if(grade_avr == highest_grade_avr){
-//             //add to indexes
-//             highest_grade_indexes[index_counter] = i;
-//             index_counter++;
-//         }
+            //new index counter
+            index_counter = 0;
 
-//     }
+            //new max value
+            highest_grade_indexes[index_counter] = i;
 
-//     printf("\n");
+            index_counter++;
+        } else if(grade_avr == highest_grade_avr){
+            //add to indexes
+            highest_grade_indexes[index_counter] = i;
+            index_counter++;
+        }
 
-//     printf("Student(s) highest average grade: \n");
+    }
 
-//     //shoule probably be moved somehow
-//     for (int i = 0; i < index_counter; i++)
-//     {
-//         printf("student no: %s \n", students[highest_grade_indexes[i]].student_no);
-//         printf("first name: %s \n", students[highest_grade_indexes[i]].firstname);
-//         printf("last name: %s \n", students[highest_grade_indexes[i]].lastname);
-//         printf("phone: %d \n", students[highest_grade_indexes[i]].phone);
+    *array_size = index_counter;
 
-//         printf("grade1: %d \n", students[highest_grade_indexes[i]].grades[0]);
-//         printf("grade2: %d \n", students[highest_grade_indexes[i]].grades[1]);
-//         printf("grade3: %d \n", students[highest_grade_indexes[i]].grades[2]);
-
-//         printf("\n");
-//     }
-
-// }
+}
 
 
 // void print_value_below_avr_grade_info(int size, struct Student students[], int value){
