@@ -388,58 +388,48 @@ int print_value_above_avr_grade_info(int size, struct Student students[], int va
         }
 
     }
-    
+
     return count;
 }
 
 
-// void print_students_with_top_grade(int size, struct Student students[]){
+void print_students_with_top_grade(int size, struct Student students[]){
 
-//     int grade_occurence = 0;
+    int grade_occurence = 0;
 
-//     for (int i = 0; i < size; i++)
-//     {
-//         grade_occurence = 0;
+    for (int i = 0; i < size; i++)
+    {
+        grade_occurence = 0;
 
-//         for (int j = 0; j < students[i].no_of_grades; j++)
-//         {
-//             if(students[i].grades[j] == 12){
-//                 grade_occurence++;
-//             }
-//         }
+        for (int j = 0; j < students[i].no_of_grades; j++)
+        {
+            if(students[i].grades.array[j] == 12){
+                grade_occurence++;
+            }
+        }
 
-//         if(grade_occurence > 0) {
-//             print_student_data(1, &students[i]);
-//             printf("%s has %d max grades in total \n", students[i].firstname, grade_occurence);
-//             printf("\n");
-//         }
+        if(grade_occurence > 0) {
+            print_student_data(1, &students[i]);
+            printf("%s has %d max grades in total \n", students[i].firstname, grade_occurence);
+            printf("\n");
+        }
 
-//     }
+    }
 
-// }
+}
 
-// float print_avr_grade_students_total(int size, struct Student students[]){
+float print_avr_grade_students_total(int size, struct Student students[]){
 
-//     float student_grade_sum;
-//     float students_avr;
+    float students_avr = 0;
 
-//     for (int i = 0; i < size; i++)
-//     {
-//         student_grade_sum = 0;
+    for (int i = 0; i < size; i++)
+    {
+        students_avr += students[i].avr_grade;
+    }
 
-//         for (int j = 0; j < students[i].no_of_grades; j++)
-//         {
-//             student_grade_sum += students[i].grades[j];
-//         }
+    return students_avr/size;
 
-//         // float student_avg_grade = student_grade_sum/students[i].no_of_grades;
-//         // printf("avr: %-*.2f  \n", 20, student_avg_grade);
-//         students_avr += student_grade_sum/students[i].no_of_grades;
-//     }
-
-//     return students_avr/size;
-
-// }
+}
 
 // void search_students_lastname(int size, struct Student students[], char lastname[50]){
 

@@ -71,17 +71,18 @@ int main(int argc,char *argv[])
 
     printf("\n");
 
-    // printf("TASK 5 \n");
+    printf("TASK 5 \n");
 
-    // print_students_with_top_grade(10, students);
+    printf("Students with at least one maximum grade: \n");
+    print_students_with_top_grade(a.used, a.array);
 
-    // printf("\n");
+    printf("\n");
 
-    // printf("TASK 6 \n");
+    printf("TASK 6 \n");
 
-    // printf("Average grade of all students: %-*.2f  \n", 20, print_avr_grade_students_total(10, students));
+    printf("Average grade of all students: %-*.2f  \n", 20, print_avr_grade_students_total(a.used, a.array));
 
-    // printf("\n");
+    printf("\n");
 
     // printf("TASK 7 \n");
 
@@ -224,7 +225,7 @@ int main(int argc,char *argv[])
 
     printf("\n");
 
-    printf("TASK 11 \n");
+    printf("TASK 12 \n");
 
     for (int i = 0; i < a.used; i++)
     {
