@@ -170,7 +170,7 @@ int main(int argc,char *argv[])
     insert_student_by_name(&a, "S11", "Erik", "Eriksen", 34343434, grades);
     print_student_data(a.used, a.array);
 
-    // printf("\n");
+    printf("\n");
 
     // int result = strcmp("gog", "bil");
     // printf("strcmp(str1, str2) = %d\n", result);
@@ -191,16 +191,16 @@ int main(int argc,char *argv[])
     // print_write_string("\n", output_file);
 
 
-    // printf("TASK 11 \n");
+    printf("TASK 11 \n");
 
-    // remove_student_by_id(&a, "S5");
-    // print_student_data(a.used, a.array);
+    remove_student_by_id(&a, "S5");
+    print_student_data(a.used, a.array);
 
     //Susanne er desværre stadig på samme adresse (selvom felter og størrelse på array er blevet ændret)
     // printf("se: %s \n", a.array[9].firstname);
     // printf("se: %s \n", a.array[10].firstname);
 
-    // printf("\n");
+    printf("\n");
 
 
     // int_Array b;
