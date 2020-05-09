@@ -1,10 +1,15 @@
+typedef struct {
+  int *array;
+  int used;
+  int size;
+} int_Array;
+
 struct Student {
     char student_no[20];
     char firstname[1000];
-    // https://www.youtube.com/watch?v=i5DvIv49VWo
     char lastname[1000];
     int phone;
-    int grades[50];
+    int_Array grades;
     int no_of_grades;
     float avr_grade;
 };

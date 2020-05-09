@@ -24,72 +24,72 @@ int main(int argc,char *argv[])
     //assigning data to Student structs
     struct Student students[10];
     
-    printf("TASK 1 \n");
-    printf("\n");
+    // printf("TASK 1 \n");
+    // printf("\n");
 
-    get_student_data(10, "tekstfil", students);
-    print_student_data(10, students);
+    // get_student_data(10, "tekstfil", students);
+    // print_student_data(10, students);
 
-    printf("\n");
+    // printf("\n");
 
-    printf("TASK 2 \n");
-    print_highest_grade_info(10, students);
+    // printf("TASK 2 \n");
+    // print_highest_grade_info(10, students);
 
-    printf("\n");
+    // printf("\n");
 
-    printf("TASK 3 \n");
+    // printf("TASK 3 \n");
 
-    printf("Students with grades below avg. 2 grade: \n");
-    printf("\n");
+    // printf("Students with grades below avg. 2 grade: \n");
+    // printf("\n");
 
-    print_value_below_avr_grade_info(10, students, 2);
+    // print_value_below_avr_grade_info(10, students, 2);
 
-    printf("\n");
+    // printf("\n");
 
-    printf("TASK 4 \n");
+    // printf("TASK 4 \n");
 
-    printf("Students with grades above avg. 2 grade: \n");
-    printf("\n");
+    // printf("Students with grades above avg. 2 grade: \n");
+    // printf("\n");
     
-    print_value_above_avr_grade_info(10, students, 2);
+    // print_value_above_avr_grade_info(10, students, 2);
 
-    printf("\n");
+    // printf("\n");
 
-    printf("TASK 5 \n");
+    // printf("TASK 5 \n");
 
-    print_students_with_top_grade(10, students);
+    // print_students_with_top_grade(10, students);
 
-    printf("\n");
+    // printf("\n");
 
-    printf("TASK 6 \n");
+    // printf("TASK 6 \n");
 
-    printf("Average grade of all students: %-*.2f  \n", 20, print_avr_grade_students_total(10, students));
+    // printf("Average grade of all students: %-*.2f  \n", 20, print_avr_grade_students_total(10, students));
 
-    printf("\n");
+    // printf("\n");
 
-    printf("TASK 7 \n");
+    // printf("TASK 7 \n");
 
-    printf("Info about all students with lastname Hansen (solely): \n");
+    // printf("Info about all students with lastname Hansen (solely): \n");
 
-    search_students_lastname(10, students, "Hansen");
+    // search_students_lastname(10, students, "Hansen");
 
-    printf("\n");
+    // printf("\n");
     
-    printf("TASK 8 \n");
+    // printf("TASK 8 \n");
 
-    selectionsort_by_firstname(students, 10);
-    print_student_data(10, students);
+    // selectionsort_by_firstname(students, 10);
+    // print_student_data(10, students);
 
-    printf("\n");
+    // printf("\n");
 
-    printf("TASK 9 \n");
+    // printf("TASK 9 \n");
 
-    selectionsort_by_avrgrade(students, 10);
-    print_student_data(10, students);
+    // selectionsort_by_avrgrade(students, 10);
+    // print_student_data(10, students);
 
-    printf("\n");
+    // printf("\n");
 
-    printf("TASK 10 \n");
+    // printf("TASK 10 \n");
 
     
 
@@ -152,7 +152,7 @@ int main(int argc,char *argv[])
     initArray(&a, 5); 
     
     a = get_student_data2("tekstfil");
-    printf("RABBIT \n");
+    // printf("RABBIT \n");
     selectionsort_by_firstname(a.array, a.used);
     print_student_data(a.used, a.array);
 
@@ -164,14 +164,14 @@ int main(int argc,char *argv[])
     // int grades[3] = {12, 12, 10};
     // insertArray(&a, "S13", "Coco", "Bandicoot", 25445525, grades);
     // printf("%s \n", a.array[10].firstname);
-    printf("%d \n", a.used);
-    printf("%d \n", a.size);
+    // printf("%d \n", a.used);
+    // printf("%d \n", a.size);
 
-    int grades[3] = {2, 4, 10};
-    insert_student_by_name(&a, "S11", "Erik", "Eriksen", 34343434, grades);
-    print_student_data(a.used, a.array);
+    // int grades[3] = {2, 4, 10};
+    // insert_student_by_name(&a, "S11", "Erik", "Eriksen", 34343434, grades);
+    // print_student_data(a.used, a.array);
 
-    printf("\n");
+    // printf("\n");
 
     // int result = strcmp("gog", "bil");
     // printf("strcmp(str1, str2) = %d\n", result);
@@ -192,16 +192,27 @@ int main(int argc,char *argv[])
     // print_write_string("\n", output_file);
 
 
-    printf("TASK 11 \n");
+    // printf("TASK 11 \n");
 
-    remove_student_by_id(&a, "S5");
-    print_student_data(a.used, a.array);
+    // remove_student_by_id(&a, "S5");
+    // print_student_data(a.used, a.array);
 
     //Susanne er desværre stadig på samme adresse (selvom felter og størrelse på array er blevet ændret)
     // printf("se: %s \n", a.array[9].firstname);
     // printf("se: %s \n", a.array[10].firstname);
 
-    printf("\n");
+    // printf("\n");
+
+
+    // int_Array b;
+
+    // init_int_Array(&b, 5);  // initially 5 elements
+    // for (int i = 0; i < 100; i++) {
+    //     insert_int_Array(&b, i);  // automatically resizes as necessary
+    // }
+    // printf("%d\n", b.array[9]);  // print 10th element
+    // printf("%d\n", b.used);  // print number of elements
+    // freeArray(&b);
 
     return 0;
 }
