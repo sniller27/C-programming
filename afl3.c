@@ -89,6 +89,91 @@ int main(int argc,char *argv[])
 
     printf("\n");
 
+    printf("TASK 10 \n");
+
+    
+
+
+    // typedef struct {
+    // struct Student *array;
+    // int used;
+    // int size;
+    // } Array;
+
+    // void initArray(Array *a, int initialSize) {
+    // a->array = (struct Student *)malloc(initialSize * sizeof(struct Student));
+    // a->used = 0;
+    // a->size = initialSize;
+    // }
+
+    // void insertArray(Array *a, char stud_id[50], char firstname[50], char lastname[50], int phone, int grades[]) {
+    // // a->used is the number of used entries, because a->array[a->used++] updates a->used only *after* the array has been accessed.
+    // // Therefore a->used can go up to a->size 
+    // if (a->used == a->size) {
+    //     a->size *= 2;
+    //     a->array = (struct Student *)realloc(a->array, a->size * sizeof(struct Student));
+    // }
+
+    // strcpy(a->array[a->used].student_no, stud_id);
+    // strcpy(a->array[a->used].firstname, firstname);
+    // strcpy(a->array[a->used].lastname, lastname);
+
+    // a->array[a->used].phone = phone;
+
+    // a->array[a->used].grades[0] = grades[0];
+    // a->array[a->used].grades[1] = grades[1];
+    // a->array[a->used].grades[2] = grades[2];
+
+    // // a->array[a->used] = element;
+
+    // a->used++;
+    // }
+
+    // void freeArray(Array *a) {
+    // free(a->array);
+    // a->array = NULL;
+    // a->used = a->size = 0;
+    // }
+
+
+     // initially 5 elements
+    // int grades[3] = {7,7,12};
+    // for (int i = 0; i < 20; i++){
+    //     insertArray(&a, "S11", "Bob", "Jensen", 34526623, grades);  // automatically resizes as necessary
+    // }
+    
+    // printf("et index: %s\n", a.array[9].student_no);  // print 10th element
+    // printf("et index: %s\n", a.array[9].firstname);  // print 10th element
+    // printf("brugte: %d\n", a.used);  // print number of elements
+    // printf("size: %d\n", a.size);  // print number of elements
+    // freeArray(&a);
+
+    Array a;
+    initArray(&a, 5); 
+    
+    a = get_student_data2("tekstfil");
+    printf("RABBIT \n");
+    selectionsort_by_firstname(a.array, a.used);
+    print_student_data(a.used, a.array);
+
+    // print_student_data(10, students);
+    // printf("back \n");
+    // printf("%s \n", a.array[5].firstname);
+    // printf("%s \n", a.array[7].firstname);
+
+    // int grades[3] = {12, 12, 10};
+    // insertArray(&a, "S13", "Coco", "Bandicoot", 25445525, grades);
+    // printf("%s \n", a.array[10].firstname);
+    printf("%d \n", a.used);
+    printf("%d \n", a.size);
+
+    int grades[3] = {2, 4, 10};
+    insert_student_by_name(&a, "S11", "Erik", "Eriksen", 34343434, grades);
+    printf("AFTER INSERT \n");
+    print_student_data(a.used, a.array);
+
+    printf("\n");
+
     // int result = strcmp("gog", "bil");
     // printf("strcmp(str1, str2) = %d\n", result);
 

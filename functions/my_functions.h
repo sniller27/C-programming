@@ -61,6 +61,125 @@ void get_student_data(int size, const char *file_name, struct Student students[]
     
 }
 
+
+
+
+
+
+
+    typedef struct {
+    struct Student *array;
+    int used;
+    int size;
+    } Array;
+
+    void initArray(Array *a, int initialSize) {
+    a->array = (struct Student *)malloc(initialSize * sizeof(struct Student));
+    a->used = 0;
+    a->size = initialSize;
+    }
+
+    void insertArray(Array *a, char stud_id[50], char firstname[50], char lastname[50], int phone, int grades[]) {
+    // a->used is the number of used entries, because a->array[a->used++] updates a->used only *after* the array has been accessed.
+    // Therefore a->used can go up to a->size 
+    if (a->used == a->size) {
+        a->size *= 2;
+        a->array = (struct Student *)realloc(a->array, a->size * sizeof(struct Student));
+    }
+
+    strcpy(a->array[a->used].student_no, stud_id);
+    strcpy(a->array[a->used].firstname, firstname);
+    strcpy(a->array[a->used].lastname, lastname);
+
+    a->array[a->used].phone = phone;
+
+    a->array[a->used].grades[0] = grades[0];
+    a->array[a->used].grades[1] = grades[1];
+    a->array[a->used].grades[2] = grades[2];
+
+    a->array[a->used].no_of_grades = 3;
+
+    // a->array[a->used] = element;
+
+    a->used++;
+    }
+
+    void freeArray(Array *a) {
+    free(a->array);
+    a->array = NULL;
+    a->used = a->size = 0;
+    }
+
+
+
+
+
+
+
+
+
+
+Array get_student_data2(const char *file_name){
+
+    int phone, grade1, grade2, grade3;
+
+    char file_path[80],
+        student_no[50],
+        firstname[255],
+        lastname[255]
+        ;
+
+    strcpy(file_path, "data/");
+    strcat(file_path, file_name);
+    strcat(file_path, ".txt");
+
+    //instatiate filepointer instance (one for reading and one for writing)
+    FILE* read_data = fopen(file_path,"r");
+
+    // error checking filepointer
+    if (read_data==NULL) 
+    { 
+        printf("no such file."); 
+    }
+
+    //reading headers from 1st line in file and save them to variables
+    // fscanf(read_data, "%s %s", header_1, header_2);
+
+    int counter = 0;
+    Array a;
+
+    initArray(&a, 5); 
+
+    while(fscanf(read_data, "%s %s %s %d %d %d %d", student_no, firstname, lastname, &phone, &grade1, &grade2, &grade3)!=EOF){
+
+        int grades[3] = {grade1, grade2, grade3};
+        // insertArray(&a, "S11", "Bob", "Jensen", 34526623, grades);  // automatically resizes as necessary
+        insertArray(&a, student_no, firstname, lastname, phone, grades);
+
+        // students[counter].no_of_grades = 3;
+
+        printf("et index: %s\n", a.array[counter].firstname);  // print 10th element
+        printf("et index: %s\n", a.array[counter].lastname);  // print 10th element
+        printf("brugte: %d\n", a.used);  // print number of elements
+        printf("size: %d\n", a.size);  // print number of elements
+
+        counter++;
+    }
+
+    // strcpy(students[0].firstname, "Dickbro");
+    // printf("dick joe: %s \n", students[0].firstname);
+    // printf("%s \n", a.array[9].firstname);
+
+    //close file connections
+    fclose(read_data);
+    return a;
+}
+
+
+
+
+
+
 void print_student_data(int size, struct Student students[]){
 
     for (int i = 0; i < size; i++)
@@ -345,4 +464,54 @@ void selectionsort_by_avrgrade(struct Student a[],int n) {
 
             }
         }
+}
+
+
+void insert_student_by_name(Array *a, char stud_id[50], char firstname[50], char lastname[50], int phone, int grades[]) {
+
+
+    if (a->used == a->size) {
+        a->size *= 2;
+        a->array = (struct Student *)realloc(a->array, a->size * sizeof(struct Student));
+    }
+
+    for (int i = 0; i < a->used; i++)
+    {
+        printf("eriks: %d \n", strcmp(firstname, "Erik"));
+        printf("ene: %s \n", firstname);
+        printf("anden: %s \n", a->array[i].firstname);
+
+        printf("her: %d \n", strcmp(firstname, a->array[i].firstname));
+
+        //Tager ikke hensyn til andre med samme navn og sorterer ikke efter efternavn!
+        if (strcmp(firstname, a->array[i].firstname) == -1)
+        {
+            printf("yes \n");
+            for (int j = a->used; j > i; j--)
+            {
+                printf("flyt: %s \n", a->array[j].firstname);
+                a->array[j] = a->array[j-1];
+            }
+
+            // insertArray(&a, stud_id, firstname, lastname, phone, grades);
+
+            strcpy(a->array[i].student_no, stud_id);
+            strcpy(a->array[i].firstname, firstname);
+            strcpy(a->array[i].lastname, lastname);
+
+            a->array[i].phone = phone;
+
+            a->array[i].grades[0] = grades[0];
+            a->array[i].grades[1] = grades[1];
+            a->array[i].grades[2] = grades[2];
+
+            a->array[i].no_of_grades = 3;
+
+            a->used++;
+            
+            break;
+        }
+        
+    }
+
 }
