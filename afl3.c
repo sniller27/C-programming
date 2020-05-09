@@ -202,7 +202,14 @@ int main(int argc,char *argv[])
 
     printf("\n");
 
+    printf("TASK 11 \n");
 
+    for (int i = 0; i < a.used; i++)
+    {
+        add_grade(&a, i, 7);
+    }
+
+    print_student_data(a.used, a.array);
     // int_Array b;
 
     // init_int_Array(&b, 5);  // initially 5 elements
@@ -212,6 +219,8 @@ int main(int argc,char *argv[])
     // printf("%d\n", b.array[9]);  // print 10th element
     // printf("%d\n", b.used);  // print number of elements
     // freeArray(&b);
+
+    printf("\n");
 
     return 0;
 }

@@ -149,6 +149,16 @@ void free_int_Array(int_Array *a) {
     a->used = a->size = 0;
     }
 
+    void add_grade(Array *a, int index, int grade) {
+
+        insert_int_Array(&a->array[index].grades, grade);
+
+        a->array[a->used].no_of_grades = a->array->grades.used;
+
+    }
+
+    
+
 
 
 
@@ -241,7 +251,7 @@ void print_student_data(int size, struct Student students[]){
             printf("grade: %d \n", students[i].grades.array[j]);
         }
 
-        // printf("how many used: %d \n", students[i].grades.used);
+        // printf("number of grades: %d \n", students[i].grades.used);
 
         // printf("grade1: %d \n", students[i].grades.array[0]);
         // printf("grade2: %d \n", students[i].grades.array[1]);
