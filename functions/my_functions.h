@@ -515,3 +515,40 @@ void insert_student_by_name(Array *a, char stud_id[50], char firstname[50], char
     }
 
 }
+
+void remove_student_by_id(Array *a, char stud_id[50]) {
+
+    for (int i = 0; i < a->used; i++)
+    {
+        // printf("loop: %s: \n", strcmp(stud_id, a->array[i].student_no));
+
+        // printf("print: %d \n", strcmp(stud_id, a->array[i].student_no));
+
+        if (strcmp(stud_id, a->array[i].student_no) == 0)
+        {
+            // printf("found \n");
+            printf("Fjern: %s \n", a->array[i].firstname);
+
+            printf("\n");
+
+            //remove student
+
+            for (int j = i; j < a->used-1; j++)
+            {
+                a->array[j] = a->array[j+1];
+            }
+
+            // printf("EXTRA: %s \n", a->array[9].firstname);
+            // printf("EXTRA: %s \n", a->array[10].firstname);
+
+            
+            // free(a->array[10]);
+            
+            a->used--;
+            
+            break;
+        }
+        
+    }
+
+}
