@@ -197,17 +197,18 @@ Array get_student_data2(const char *file_name){
 
         // students[counter].no_of_grades = 3;
 
-        printf("et index: %s\n", a.array[counter].firstname);  // print 10th element
-        printf("et index: %s\n", a.array[counter].lastname);  // print 10th element
+        // printf("et index: %s\n", a.array[counter].firstname);  // print 10th element
+        // printf("et index: %s\n", a.array[counter].lastname);  // print 10th element
         // printf("brugte: %d\n", a.used);  // print number of elements
         // printf("size: %d\n", a.size);  // print number of elements
-        printf("used: %d\n", a.array[counter].grades.used);
-        printf("size: %d\n", a.array[counter].grades.size);
-        printf("grade: %d\n", a.array[counter].grades.array[0]);
-        printf("grade: %d\n", a.array[counter].grades.array[1]);
-        printf("grade: %d\n", a.array[counter].grades.array[2]);
+    
+        // printf("used: %d\n", a.array[counter].grades.used);
+        // printf("size: %d\n", a.array[counter].grades.size);
+        // printf("grade: %d\n", a.array[counter].grades.array[0]);
+        // printf("grade: %d\n", a.array[counter].grades.array[1]);
+        // printf("grade: %d\n", a.array[counter].grades.array[2]);
 
-        printf("\n");
+        // printf("\n");
 
         counter++;
     }
@@ -239,6 +240,8 @@ void print_student_data(int size, struct Student students[]){
         {
             printf("grade: %d \n", students[i].grades.array[j]);
         }
+
+        // printf("how many used: %d \n", students[i].grades.used);
 
         // printf("grade1: %d \n", students[i].grades.array[0]);
         // printf("grade2: %d \n", students[i].grades.array[1]);
@@ -518,54 +521,55 @@ void selectionsort_by_firstname(struct Student a[],int n) {
 // }
 
 
-// void insert_student_by_name(Array *a, char stud_id[50], char firstname[50], char lastname[50], int phone, int grades[]) {
+void insert_student_by_name(Array *a, char stud_id[50], char firstname[50], char lastname[50], int phone, int grades[]) {
 
 
-//     if (a->used == a->size) {
-//         a->size *= 2;
-//         a->array = (struct Student *)realloc(a->array, a->size * sizeof(struct Student));
-//     }
+    if (a->used == a->size) {
+        a->size *= 2;
+        a->array = (struct Student *)realloc(a->array, a->size * sizeof(struct Student));
+    }
 
-//     for (int i = 0; i < a->used; i++)
-//     {
-//         printf("eriks: %d \n", strcmp(firstname, "Erik"));
-//         printf("ene: %s \n", firstname);
-//         printf("anden: %s \n", a->array[i].firstname);
+    for (int i = 0; i < a->used; i++)
+    {
+        // printf("eriks: %d \n", strcmp(firstname, "Erik"));
+        // printf("ene: %s \n", firstname);
+        // printf("anden: %s \n", a->array[i].firstname);
 
-//         printf("her: %d \n", strcmp(firstname, a->array[i].firstname));
+        // printf("her: %d \n", strcmp(firstname, a->array[i].firstname));
 
-//         //Tager ikke hensyn til andre med samme navn og sorterer ikke efter efternavn!
-//         if (strcmp(firstname, a->array[i].firstname) == -1)
-//         {
-//             printf("yes \n");
-//             for (int j = a->used; j > i; j--)
-//             {
-//                 printf("flyt: %s \n", a->array[j].firstname);
-//                 a->array[j] = a->array[j-1];
-//             }
+        //Tager ikke hensyn til andre med samme navn og sorterer ikke efter efternavn!
+        if (strcmp(firstname, a->array[i].firstname) == -1)
+        {
+            // printf("yes \n");
+            for (int j = a->used; j > i; j--)
+            {
+                // printf("flyt: %s \n", a->array[j].firstname);
+                a->array[j] = a->array[j-1];
+            }
 
-//             // insertArray(&a, stud_id, firstname, lastname, phone, grades);
+            // insertArray(&a, stud_id, firstname, lastname, phone, grades);
 
-//             strcpy(a->array[i].student_no, stud_id);
-//             strcpy(a->array[i].firstname, firstname);
-//             strcpy(a->array[i].lastname, lastname);
+            strcpy(a->array[i].student_no, stud_id);
+            strcpy(a->array[i].firstname, firstname);
+            strcpy(a->array[i].lastname, lastname);
 
-//             a->array[i].phone = phone;
+            a->array[i].phone = phone;
 
-//             a->array[i].grades[0] = grades[0];
-//             a->array[i].grades[1] = grades[1];
-//             a->array[i].grades[2] = grades[2];
-
-//             a->array[i].no_of_grades = 3;
-
-//             a->used++;
+            for (int j = 0; j < a->array[i].grades.used; j++)
+            {
+                a->array[i].grades.array[j] = grades[j];
+            }
             
-//             break;
-//         }
-        
-//     }
+            a->array[i].no_of_grades = a->array[i].grades.used;
 
-// }
+            a->used++;
+            
+            break;
+        }
+        
+    }
+
+}
 
 // void remove_student_by_id(Array *a, char stud_id[50]) {
 

@@ -89,7 +89,7 @@ int main(int argc,char *argv[])
 
     // printf("\n");
 
-    // printf("TASK 10 \n");
+    printf("TASK 10 \n");
 
     
 
@@ -152,9 +152,8 @@ int main(int argc,char *argv[])
     initArray(&a, 5); 
     
     a = get_student_data2("tekstfil");
-    // printf("RABBIT \n");
     selectionsort_by_firstname(a.array, a.used);
-    print_student_data(a.used, a.array);
+    // print_student_data(a.used, a.array);
 
     // print_student_data(10, students);
     // printf("back \n");
@@ -167,9 +166,9 @@ int main(int argc,char *argv[])
     // printf("%d \n", a.used);
     // printf("%d \n", a.size);
 
-    // int grades[3] = {2, 4, 10};
-    // insert_student_by_name(&a, "S11", "Erik", "Eriksen", 34343434, grades);
-    // print_student_data(a.used, a.array);
+    int grades[3] = {2, 4, 10};
+    insert_student_by_name(&a, "S11", "Erik", "Eriksen", 34343434, grades);
+    print_student_data(a.used, a.array);
 
     // printf("\n");
 
