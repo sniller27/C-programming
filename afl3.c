@@ -46,21 +46,20 @@ int main(int argc,char *argv[])
     int array_size, highest_grades_indexes[10];
     print_highest_grade_info(a.used, a.array, highest_grades_indexes, &array_size);
 
-    printf("\n");
-
     printf("Student(s) with highest average grade: \n");
     print_student_data_index(array_size, a.array, highest_grades_indexes);
 
     printf("\n");
 
-    // printf("TASK 3 \n");
+    printf("TASK 3 \n");
 
-    // printf("Students with grades below avg. 2 grade: \n");
-    // printf("\n");
+    int array_size2, low_grades_indexes[10];
+    print_value_below_avr_grade_info(a.used, a.array, low_grades_indexes, &array_size2, 2);
 
-    // print_value_below_avr_grade_info(10, students, 2);
+    printf("Students with grades below avg. 2 grade: \n");
+    print_student_data_index(array_size2, a.array, low_grades_indexes);
 
-    // printf("\n");
+    printf("\n");
 
     // printf("TASK 4 \n");
 
