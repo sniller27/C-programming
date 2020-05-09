@@ -84,27 +84,27 @@ int main(int argc,char *argv[])
 
     printf("\n");
 
-    // printf("TASK 7 \n");
+    printf("TASK 7 \n");
 
-    // printf("Info about all students with lastname Hansen (solely): \n");
+    printf("Info about all students with lastname Hansen (solely): \n");
 
-    // search_students_lastname(10, students, "Hansen");
+    search_students_lastname(a.used, a.array, "Hansen");
 
-    // printf("\n");
+    printf("\n");
     
-    // printf("TASK 8 \n");
+    printf("TASK 8 \n");
 
-    // selectionsort_by_firstname(students, 10);
-    // print_student_data(10, students);
+    selectionsort_by_firstname(a.array, a.used);
+    print_student_data(a.used, a.array);
 
-    // printf("\n");
+    printf("\n");
 
-    // printf("TASK 9 \n");
+    printf("TASK 9 \n");
 
-    // selectionsort_by_avrgrade(students, 10);
-    // print_student_data(10, students);
+    selectionsort_by_avrgrade(a.array, a.used);
+    print_student_data(a.used, a.array);
 
-    // printf("\n");
+    printf("\n");
 
     printf("TASK 10 \n");
 
@@ -244,6 +244,11 @@ int main(int argc,char *argv[])
     // freeArray(&b);
 
     printf("\n");
+
+    printf("TASK 13 \n");
+
+    printf("\n");
+
 
     return 0;
 }

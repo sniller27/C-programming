@@ -431,16 +431,16 @@ float print_avr_grade_students_total(int size, struct Student students[]){
 
 }
 
-// void search_students_lastname(int size, struct Student students[], char lastname[50]){
+void search_students_lastname(int size, struct Student students[], char lastname[50]){
 
-//     for (int i = 0; i < size; i++)
-//     {
-//         if(strcmp(students[i].lastname, "Hansen") == 0) {
-//             print_student_data(1, &students[i]);
-//         }
-//     }
+    for (int i = 0; i < size; i++)
+    {
+        if(strcmp(students[i].lastname, "Hansen") == 0) {
+            print_student_data(1, &students[i]);
+        }
+    }
 
-// }
+}
 
 void selectionsort_by_firstname(struct Student a[],int n) {
 
@@ -471,34 +471,34 @@ void selectionsort_by_firstname(struct Student a[],int n) {
         }
 }
 
-// void selectionsort_by_avrgrade(struct Student a[],int n) {
+void selectionsort_by_avrgrade(struct Student a[],int n) {
 
-//         int pos;
-//         struct Student gem;
+        int pos;
+        struct Student gem;
 
-//         for(int i=0; i<n-1; i++) {
+        for(int i=0; i<n-1; i++) {
 
-//             pos=i;
+            pos=i;
 
-//             //finding lowest index
-//             for(int j=i+1;j<n;j++){
+            //finding lowest index
+            for(int j=i+1;j<n;j++){
 
-//                 if(a[pos].avr_grade > a[j].avr_grade){
-//                     pos=j;
-//                 }
+                if(a[pos].avr_grade > a[j].avr_grade){
+                    pos=j;
+                }
 
-//             }
+            }
 
-//             //swapping indexes
-//             if(pos!=i){
+            //swapping indexes
+            if(pos!=i){
 
-//                 struct Student tmp = a[i];
-//                 a[i] = a[pos];
-//                 a[pos] = tmp;
+                struct Student tmp = a[i];
+                a[i] = a[pos];
+                a[pos] = tmp;
 
-//             }
-//         }
-// }
+            }
+        }
+}
 
 
 void insert_student_by_name(Array *a, char stud_id[50], char firstname[50], char lastname[50], int phone, int grades[]) {
