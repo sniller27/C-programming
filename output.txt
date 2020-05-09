@@ -1,0 +1,35 @@
+TASK 1 
+
+
+TASK 2 
+Student(s) with highest average grade: 
+
+TASK 3 
+Students with grades below avg. 2 grade: 
+
+TASK 4 
+
+Number of students with avg. grade above avg. 2 grade: 8 
+
+TASK 5 
+Students with at least one maximum grade: 
+
+TASK 6 
+Average grade of all students: 6.70                  
+
+TASK 7 
+Info about all students with lastname Hansen (solely): 
+
+TASK 8 
+
+TASK 9 
+
+TASK 10 
+
+
+TASK 11 
+
+TASK 12 
+
+TASK 13 
+
