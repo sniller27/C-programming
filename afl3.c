@@ -37,8 +37,9 @@ int main(int argc,char *argv[])
     
     //TASK 1
     print_write_string("TASK 1 \n", output_file);
+    print_write_string("All students info: \n", output_file);
 
-    print_student_data(student_array.used, student_array.array);
+    print_student_data(student_array.used, student_array.array, output_file);
 
     print_write_string("\n", output_file);
 
@@ -50,8 +51,6 @@ int main(int argc,char *argv[])
 
     print_write_string("Student(s) with highest average grade: \n", output_file);
     print_student_data_index(array_size, student_array.array, highest_grades_indexes, output_file);
-
-    print_write_string("\n", output_file);
 
     //TASK 3
     print_write_string("TASK 3 \n", output_file);
@@ -79,9 +78,7 @@ int main(int argc,char *argv[])
     print_write_string("TASK 5 \n", output_file);
 
     print_write_string("Students with at least one maximum grade: \n", output_file);
-    print_students_with_top_grade(student_array.used, student_array.array);
-
-    print_write_string("\n", output_file);
+    print_students_with_top_grade(student_array.used, student_array.array, output_file);
 
     //TASK 6
     print_write_string("TASK 6 \n", output_file);
@@ -95,28 +92,31 @@ int main(int argc,char *argv[])
 
     print_write_string("Info about all students with lastname Hansen (solely): \n", output_file);
 
-    search_students_lastname(student_array.used, student_array.array, "Hansen");
+    search_students_lastname(student_array.used, student_array.array, "Hansen", output_file);
 
     print_write_string("\n", output_file);
     
     //TASK 8
     print_write_string("TASK 8 \n", output_file);
+    print_write_string("All students sorted by firstname: \n", output_file);
 
     selectionsort_by_firstname(student_array.array, student_array.used);
-    print_student_data(student_array.used, student_array.array);
+    print_student_data(student_array.used, student_array.array, output_file);
 
     print_write_string("\n", output_file);
 
     //TASK 9
     print_write_string("TASK 9 \n", output_file);
+    print_write_string("All students sorted by average grades: \n", output_file);
 
     selectionsort_by_avrgrade(student_array.array, student_array.used);
-    print_student_data(student_array.used, student_array.array);
+    print_student_data(student_array.used, student_array.array, output_file);
 
     print_write_string("\n", output_file);
 
     //TASK 10
     print_write_string("TASK 10 \n", output_file);
+    print_write_string("Sorting students by firstname and adding a new student (Erik): \n", output_file);
 
     selectionsort_by_firstname(student_array.array, student_array.used);
 
@@ -129,27 +129,29 @@ int main(int argc,char *argv[])
     insert_int_Array(&grades, 10);
 
     insert_student_by_name(&student_array, "S11", "Erik", "Eriksen", 34343434, &grades);
-    print_student_data(student_array.used, student_array.array);
+    print_student_data(student_array.used, student_array.array, output_file);
 
     print_write_string("\n", output_file);
 
     //TASK 11
     print_write_string("TASK 11 \n", output_file);
+    print_write_string("Remove student (with study no S5) and print students: \n", output_file);
 
     remove_student_by_id(&student_array, "S5");
-    print_student_data(student_array.used, student_array.array);
+    print_student_data(student_array.used, student_array.array, output_file);
 
     print_write_string("\n", output_file);
 
     //TASK 12
     print_write_string("TASK 12 \n", output_file);
+    print_write_string("All students with new grade added (7): \n", output_file);
 
     for (int i = 0; i < student_array.used; i++)
     {
         add_grade(&student_array, i, 7);
     }
 
-    print_student_data(student_array.used, student_array.array);
+    print_student_data(student_array.used, student_array.array, output_file);
 
     print_write_string("\n", output_file);
 

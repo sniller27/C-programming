@@ -1,4 +1,85 @@
 TASK 1 
+All students info: 
+student no: S5 
+first name: Carl 
+last name: Carlsen 
+phone: 11111111 
+grade: 10 
+grade: 7 
+grade: 12 
+
+student no: S4 
+first name: Bente 
+last name: Bentsen 
+phone: 22222222 
+grade: 4 
+grade: 12 
+grade: 0 
+
+student no: S1 
+first name: Aneja 
+last name: Andersen 
+phone: 33333333 
+grade: 0 
+grade: 10 
+grade: 7 
+
+student no: S2 
+first name: Peter 
+last name: Hansen 
+phone: 44444444 
+grade: 10 
+grade: 7 
+grade: 4 
+
+student no: S3 
+first name: Christian 
+last name: Hansen 
+phone: 55555555 
+grade: 12 
+grade: 12 
+grade: 12 
+
+student no: S6 
+first name: Pernille 
+last name: Hansen 
+phone: 66666666 
+grade: 10 
+grade: 12 
+grade: 12 
+
+student no: S7 
+first name: Susanne 
+last name: Petersen 
+phone: 77777777 
+grade: 12 
+grade: 4 
+grade: 0 
+
+student no: S8 
+first name: Birger 
+last name: Jensen 
+phone: 88888888 
+grade: 2 
+grade: 0 
+grade: 0 
+
+student no: S9 
+first name: Anja 
+last name: Andersen 
+phone: 99999999 
+grade: 10 
+grade: 12 
+grade: 4 
+
+student no: S10 
+first name: Dorte 
+last name: Karlsen 
+phone: 10101010 
+grade: 2 
+grade: 2 
+grade: 0 
+
 
 TASK 2 
 Student(s) with highest average grade: 
@@ -9,7 +90,6 @@ phone: 55555555
 grade: 12 
 grade: 12 
 grade: 12 
-
 
 TASK 3 
 Students with grades below avg. 2 grade: 
@@ -36,10 +116,529 @@ Number of students with avg. grade above avg. 2 grade: 8
 
 TASK 5 
 Students with at least one maximum grade: 
+student no: S5 
+first name: Carl 
+last name: Carlsen 
+phone: 11111111 
+grade: 10 
+grade: 7 
+grade: 12 
+
+Carl has 1 max grades in total 
+
+student no: S4 
+first name: Bente 
+last name: Bentsen 
+phone: 22222222 
+grade: 4 
+grade: 12 
+grade: 0 
+
+Bente has 1 max grades in total 
+
+student no: S3 
+first name: Christian 
+last name: Hansen 
+phone: 55555555 
+grade: 12 
+grade: 12 
+grade: 12 
+
+Christian has 3 max grades in total 
+
+student no: S6 
+first name: Pernille 
+last name: Hansen 
+phone: 66666666 
+grade: 10 
+grade: 12 
+grade: 12 
+
+Pernille has 2 max grades in total 
+
+student no: S7 
+first name: Susanne 
+last name: Petersen 
+phone: 77777777 
+grade: 12 
+grade: 4 
+grade: 0 
+
+Susanne has 1 max grades in total 
+
+student no: S9 
+first name: Anja 
+last name: Andersen 
+phone: 99999999 
+grade: 10 
+grade: 12 
+grade: 4 
+
+Anja has 1 max grades in total 
 
 TASK 6 
 Average grade of all students: 6.70                  
 
 TASK 7 
 Info about all students with lastname Hansen (solely): 
+student no: S2 
+first name: Peter 
+last name: Hansen 
+phone: 44444444 
+grade: 10 
+grade: 7 
+grade: 4 
 
+student no: S3 
+first name: Christian 
+last name: Hansen 
+phone: 55555555 
+grade: 12 
+grade: 12 
+grade: 12 
+
+student no: S6 
+first name: Pernille 
+last name: Hansen 
+phone: 66666666 
+grade: 10 
+grade: 12 
+grade: 12 
+
+
+TASK 8 
+All students sorted by firstname: 
+student no: S1 
+first name: Aneja 
+last name: Andersen 
+phone: 33333333 
+grade: 0 
+grade: 10 
+grade: 7 
+
+student no: S9 
+first name: Anja 
+last name: Andersen 
+phone: 99999999 
+grade: 10 
+grade: 12 
+grade: 4 
+
+student no: S4 
+first name: Bente 
+last name: Bentsen 
+phone: 22222222 
+grade: 4 
+grade: 12 
+grade: 0 
+
+student no: S8 
+first name: Birger 
+last name: Jensen 
+phone: 88888888 
+grade: 2 
+grade: 0 
+grade: 0 
+
+student no: S5 
+first name: Carl 
+last name: Carlsen 
+phone: 11111111 
+grade: 10 
+grade: 7 
+grade: 12 
+
+student no: S3 
+first name: Christian 
+last name: Hansen 
+phone: 55555555 
+grade: 12 
+grade: 12 
+grade: 12 
+
+student no: S10 
+first name: Dorte 
+last name: Karlsen 
+phone: 10101010 
+grade: 2 
+grade: 2 
+grade: 0 
+
+student no: S6 
+first name: Pernille 
+last name: Hansen 
+phone: 66666666 
+grade: 10 
+grade: 12 
+grade: 12 
+
+student no: S2 
+first name: Peter 
+last name: Hansen 
+phone: 44444444 
+grade: 10 
+grade: 7 
+grade: 4 
+
+student no: S7 
+first name: Susanne 
+last name: Petersen 
+phone: 77777777 
+grade: 12 
+grade: 4 
+grade: 0 
+
+
+TASK 9 
+All students sorted by average grades: 
+student no: S8 
+first name: Birger 
+last name: Jensen 
+phone: 88888888 
+grade: 2 
+grade: 0 
+grade: 0 
+
+student no: S10 
+first name: Dorte 
+last name: Karlsen 
+phone: 10101010 
+grade: 2 
+grade: 2 
+grade: 0 
+
+student no: S4 
+first name: Bente 
+last name: Bentsen 
+phone: 22222222 
+grade: 4 
+grade: 12 
+grade: 0 
+
+student no: S7 
+first name: Susanne 
+last name: Petersen 
+phone: 77777777 
+grade: 12 
+grade: 4 
+grade: 0 
+
+student no: S1 
+first name: Aneja 
+last name: Andersen 
+phone: 33333333 
+grade: 0 
+grade: 10 
+grade: 7 
+
+student no: S2 
+first name: Peter 
+last name: Hansen 
+phone: 44444444 
+grade: 10 
+grade: 7 
+grade: 4 
+
+student no: S9 
+first name: Anja 
+last name: Andersen 
+phone: 99999999 
+grade: 10 
+grade: 12 
+grade: 4 
+
+student no: S5 
+first name: Carl 
+last name: Carlsen 
+phone: 11111111 
+grade: 10 
+grade: 7 
+grade: 12 
+
+student no: S6 
+first name: Pernille 
+last name: Hansen 
+phone: 66666666 
+grade: 10 
+grade: 12 
+grade: 12 
+
+student no: S3 
+first name: Christian 
+last name: Hansen 
+phone: 55555555 
+grade: 12 
+grade: 12 
+grade: 12 
+
+
+TASK 10 
+Sorting students by firstname and adding a new student (Erik): 
+student no: S1 
+first name: Aneja 
+last name: Andersen 
+phone: 33333333 
+grade: 0 
+grade: 10 
+grade: 7 
+
+student no: S9 
+first name: Anja 
+last name: Andersen 
+phone: 99999999 
+grade: 10 
+grade: 12 
+grade: 4 
+
+student no: S4 
+first name: Bente 
+last name: Bentsen 
+phone: 22222222 
+grade: 4 
+grade: 12 
+grade: 0 
+
+student no: S8 
+first name: Birger 
+last name: Jensen 
+phone: 88888888 
+grade: 2 
+grade: 0 
+grade: 0 
+
+student no: S5 
+first name: Carl 
+last name: Carlsen 
+phone: 11111111 
+grade: 10 
+grade: 7 
+grade: 12 
+
+student no: S3 
+first name: Christian 
+last name: Hansen 
+phone: 55555555 
+grade: 12 
+grade: 12 
+grade: 12 
+
+student no: S10 
+first name: Dorte 
+last name: Karlsen 
+phone: 10101010 
+grade: 2 
+grade: 2 
+grade: 0 
+
+student no: S11 
+first name: Erik 
+last name: Eriksen 
+phone: 34343434 
+grade: 2 
+grade: 4 
+grade: 10 
+
+student no: S6 
+first name: Pernille 
+last name: Hansen 
+phone: 66666666 
+grade: 2 
+grade: 4 
+grade: 10 
+
+student no: S2 
+first name: Peter 
+last name: Hansen 
+phone: 44444444 
+grade: 10 
+grade: 7 
+grade: 4 
+
+student no: S7 
+first name: Susanne 
+last name: Petersen 
+phone: 77777777 
+grade: 12 
+grade: 4 
+grade: 0 
+
+
+TASK 11 
+Remove student (with study no S5) and print students: 
+student no: S1 
+first name: Aneja 
+last name: Andersen 
+phone: 33333333 
+grade: 0 
+grade: 10 
+grade: 7 
+
+student no: S9 
+first name: Anja 
+last name: Andersen 
+phone: 99999999 
+grade: 10 
+grade: 12 
+grade: 4 
+
+student no: S4 
+first name: Bente 
+last name: Bentsen 
+phone: 22222222 
+grade: 4 
+grade: 12 
+grade: 0 
+
+student no: S8 
+first name: Birger 
+last name: Jensen 
+phone: 88888888 
+grade: 2 
+grade: 0 
+grade: 0 
+
+student no: S3 
+first name: Christian 
+last name: Hansen 
+phone: 55555555 
+grade: 12 
+grade: 12 
+grade: 12 
+
+student no: S10 
+first name: Dorte 
+last name: Karlsen 
+phone: 10101010 
+grade: 2 
+grade: 2 
+grade: 0 
+
+student no: S11 
+first name: Erik 
+last name: Eriksen 
+phone: 34343434 
+grade: 2 
+grade: 4 
+grade: 10 
+
+student no: S6 
+first name: Pernille 
+last name: Hansen 
+phone: 66666666 
+grade: 2 
+grade: 4 
+grade: 10 
+
+student no: S2 
+first name: Peter 
+last name: Hansen 
+phone: 44444444 
+grade: 10 
+grade: 7 
+grade: 4 
+
+student no: S7 
+first name: Susanne 
+last name: Petersen 
+phone: 77777777 
+grade: 12 
+grade: 4 
+grade: 0 
+
+
+TASK 12 
+All students with new grade added (7): 
+student no: S1 
+first name: Aneja 
+last name: Andersen 
+phone: 33333333 
+grade: 0 
+grade: 10 
+grade: 7 
+grade: 7 
+
+student no: S9 
+first name: Anja 
+last name: Andersen 
+phone: 99999999 
+grade: 10 
+grade: 12 
+grade: 4 
+grade: 7 
+
+student no: S4 
+first name: Bente 
+last name: Bentsen 
+phone: 22222222 
+grade: 4 
+grade: 12 
+grade: 0 
+grade: 7 
+
+student no: S8 
+first name: Birger 
+last name: Jensen 
+phone: 88888888 
+grade: 2 
+grade: 0 
+grade: 0 
+grade: 7 
+
+student no: S3 
+first name: Christian 
+last name: Hansen 
+phone: 55555555 
+grade: 12 
+grade: 12 
+grade: 12 
+grade: 7 
+
+student no: S10 
+first name: Dorte 
+last name: Karlsen 
+phone: 10101010 
+grade: 2 
+grade: 2 
+grade: 0 
+grade: 7 
+
+student no: S11 
+first name: Erik 
+last name: Eriksen 
+phone: 34343434 
+grade: 2 
+grade: 4 
+grade: 10 
+grade: 7 
+
+student no: S6 
+first name: Pernille 
+last name: Hansen 
+phone: 66666666 
+grade: 2 
+grade: 4 
+grade: 10 
+grade: 7 
+
+student no: S2 
+first name: Peter 
+last name: Hansen 
+phone: 44444444 
+grade: 10 
+grade: 7 
+grade: 4 
+grade: 7 
+
+student no: S7 
+first name: Susanne 
+last name: Petersen 
+phone: 77777777 
+grade: 12 
+grade: 4 
+grade: 0 
+grade: 7 
+
+
+TASK 13 
+
+De studerende skulle gerne blive laest i opgave 1 med et array af pointere, studerende structs og dynamisk lagerallokering. 

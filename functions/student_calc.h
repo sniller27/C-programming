@@ -73,8 +73,6 @@ void value_below_avr_grade_info(int size, struct Student students[], int low_gra
         grade_avr = students[i].avr_grade;
 
         if(grade_avr < value){
-            //print_info
-            // print_student_data(1, &students[i]);
             low_grade_indexes[index_counter] = i;
             index_counter++;
         }
@@ -107,7 +105,7 @@ int value_above_avr_grade_info(int size, struct Student students[], int value){
     return count;
 }
 
-void print_students_with_top_grade(int size, struct Student students[]){
+void print_students_with_top_grade(int size, struct Student students[], FILE* output_file){
 
     int grade_occurence = 0;
 
@@ -123,9 +121,12 @@ void print_students_with_top_grade(int size, struct Student students[]){
         }
 
         if(grade_occurence > 0) {
-            print_student_data(1, &students[i]);
+            print_student_data(1, &students[i], output_file);
+            
             printf("%s has %d max grades in total \n", students[i].firstname, grade_occurence);
-            printf("\n");
+            fprintf(output_file, "%s has %d max grades in total \n", students[i].firstname, grade_occurence);
+
+            print_write_string("\n", output_file);
         }
 
     }
