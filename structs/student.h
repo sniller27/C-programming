@@ -10,6 +10,5 @@ struct Student {
     char lastname[1000];
     int phone;
     int_Array grades;
-    int no_of_grades;
     float avr_grade;
 };

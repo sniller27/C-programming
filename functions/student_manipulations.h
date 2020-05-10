@@ -24,8 +24,6 @@ void insert_student_by_name(Student_Array *a, char stud_id[50], char firstname[5
 
             a->array[i].phone = phone;
             
-            //sets no of grades (redundant value)
-            a->array[i].no_of_grades = grades->used;
             //resets used values (due to existing values in index)
             a->array[i].grades.used = 0;
 

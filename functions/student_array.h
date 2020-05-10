@@ -11,9 +11,7 @@ void init_student_array(Student_Array *a, int initialSize) {
     a->size = initialSize;
 }
 
-void insert_student_array(Student_Array *a, char stud_id[50], char firstname[50], char lastname[50], int phone, int grades[]) {
-    // a->used is the number of used entries, because a->array[a->used++] updates a->used only *after* the array has been accessed.
-    // Therefore a->used can go up to a->size 
+void insert_student_array(Student_Array *a, char stud_id[50], char firstname[50], char lastname[50], int phone, int_Array *grades) {
     if (a->used == a->size) {
         a->size *= 2;
         a->array = (struct Student *)realloc(a->array, a->size * sizeof(struct Student));
@@ -27,11 +25,9 @@ void insert_student_array(Student_Array *a, char stud_id[50], char firstname[50]
 
     init_int_Array(&a->array[a->used].grades, INITIAL_SIZE_INT_ARRAY);
 
-    insert_int_Array(&a->array[a->used].grades, grades[0]);
-    insert_int_Array(&a->array[a->used].grades, grades[1]);
-    insert_int_Array(&a->array[a->used].grades, grades[2]);
-
-    a->array[a->used].no_of_grades = 3;
+    insert_int_Array(&a->array[a->used].grades, grades->array[0]);
+    insert_int_Array(&a->array[a->used].grades, grades->array[1]);
+    insert_int_Array(&a->array[a->used].grades, grades->array[2]);
 
     a->used++;
 }
@@ -45,7 +41,5 @@ void free_student_array(Student_Array *a) {
 void add_grade(Student_Array *a, int index, int grade) {
 
     insert_int_Array(&a->array[index].grades, grade);
-
-    a->array[a->used].no_of_grades = a->array->grades.used;
 
 }

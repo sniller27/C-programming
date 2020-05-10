@@ -2,12 +2,12 @@ float calc_avg_grade(struct Student students){
 
     float total_grade = 0, grade_avr;
 
-    for (int j = 0; j < students.no_of_grades; j++)
+    for (int j = 0; j < students.grades.used; j++)
     {
         total_grade += students.grades.array[j];
     }
 
-    grade_avr = total_grade/students.no_of_grades;
+    grade_avr = total_grade/students.grades.used;
 
     students.avr_grade = grade_avr;
     
@@ -115,7 +115,7 @@ void print_students_with_top_grade(int size, struct Student students[]){
     {
         grade_occurence = 0;
 
-        for (int j = 0; j < students[i].no_of_grades; j++)
+        for (int j = 0; j < students[i].grades.used; j++)
         {
             if(students[i].grades.array[j] == 12){
                 grade_occurence++;

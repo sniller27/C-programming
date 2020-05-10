@@ -28,8 +28,14 @@ Student_Array get_student_data(const char *file_name){
 
     while(fscanf(read_data, "%s %s %s %d %d %d %d", student_no, firstname, lastname, &phone, &grade1, &grade2, &grade3)!=EOF){
 
-        int grades[3] = {grade1, grade2, grade3};
-        insert_student_array(&a, student_no, firstname, lastname, phone, grades);
+        int_Array grades;
+        init_int_Array(&grades, INITIAL_SIZE_INT_ARRAY);
+
+        insert_int_Array(&grades, grade1);
+        insert_int_Array(&grades, grade2);
+        insert_int_Array(&grades, grade3);
+
+        insert_student_array(&a, student_no, firstname, lastname, phone, &grades);
 
         counter++;
     }
