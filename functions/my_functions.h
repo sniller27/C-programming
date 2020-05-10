@@ -24,82 +24,6 @@ void free_int_Array(int_Array *a) {
 
 
 
-
-
-
-
-
-
-
-
-// void get_student_data(int size, const char *file_name, struct Student students[]){
-
-//     float weather_value = 0;
-
-//     int phone, grade1, grade2, grade3;
-
-//     char file_path[80],
-//         // header_1[255],
-//         // header_2[255],
-//         student_no[50],
-//         firstname[255],
-//         // phone[20],
-//         lastname[255]
-        
-        
-        
-//         ;
-
-//     strcpy(file_path, "data/");
-//     strcat(file_path, file_name);
-//     strcat(file_path, ".txt");
-
-//     //instatiate filepointer instance (one for reading and one for writing)
-//     FILE* read_data = fopen(file_path,"r");
-
-//     // error checking filepointer
-//     if (read_data==NULL) 
-//     { 
-//         printf("no such file."); 
-//     }
-
-//     //reading headers from 1st line in file and save them to variables
-//     // fscanf(read_data, "%s %s", header_1, header_2);
-
-//     int counter = 0;
-
-//     while(fscanf(read_data, "%s %s %s %d %d %d %d", student_no, firstname, lastname, &phone, &grade1, &grade2, &grade3)!=EOF){
-
-//         //assign data to struct
-//         strcpy(students[counter].student_no, student_no);
-//         strcpy(students[counter].firstname, firstname);
-//         strcpy(students[counter].lastname, lastname);
-
-//         students[counter].phone = phone;
-
-//         students[counter].grades[0] = grade1;
-//         students[counter].grades[1] = grade2;
-//         students[counter].grades[2] = grade3;
-
-//         students[counter].no_of_grades = 3;
-
-//         counter++;
-//     }
-
-//     // strcpy(students[0].firstname, "Dickbro");
-//     // printf("dick joe: %s \n", students[0].firstname);
-
-//     //close file connections
-//     fclose(read_data);
-    
-// }
-
-
-
-
-
-
-
     typedef struct {
     struct Student *array;
     int used;
@@ -132,13 +56,7 @@ void free_int_Array(int_Array *a) {
     insert_int_Array(&a->array[a->used].grades, grades[1]);
     insert_int_Array(&a->array[a->used].grades, grades[2]);
 
-    // a->array[a->used].grades[0] = grades[0];
-    // a->array[a->used].grades[1] = grades[1];
-    // a->array[a->used].grades[2] = grades[2];
-
     a->array[a->used].no_of_grades = 3;
-
-    // a->array[a->used] = element;
 
     a->used++;
     }
@@ -156,16 +74,6 @@ void free_int_Array(int_Array *a) {
         a->array[a->used].no_of_grades = a->array->grades.used;
 
     }
-
-    
-
-
-
-
-
-
-
-
 
 
 Array get_student_data2(const char *file_name){
@@ -191,9 +99,6 @@ Array get_student_data2(const char *file_name){
         printf("no such file."); 
     }
 
-    //reading headers from 1st line in file and save them to variables
-    // fscanf(read_data, "%s %s", header_1, header_2);
-
     int counter = 0;
     Array a;
 
@@ -202,39 +107,15 @@ Array get_student_data2(const char *file_name){
     while(fscanf(read_data, "%s %s %s %d %d %d %d", student_no, firstname, lastname, &phone, &grade1, &grade2, &grade3)!=EOF){
 
         int grades[3] = {grade1, grade2, grade3};
-        // insertArray(&a, "S11", "Bob", "Jensen", 34526623, grades);  // automatically resizes as necessary
         insertArray(&a, student_no, firstname, lastname, phone, grades);
-
-        // students[counter].no_of_grades = 3;
-
-        // printf("et index: %s\n", a.array[counter].firstname);  // print 10th element
-        // printf("et index: %s\n", a.array[counter].lastname);  // print 10th element
-        // printf("brugte: %d\n", a.used);  // print number of elements
-        // printf("size: %d\n", a.size);  // print number of elements
-    
-        // printf("used: %d\n", a.array[counter].grades.used);
-        // printf("size: %d\n", a.array[counter].grades.size);
-        // printf("grade: %d\n", a.array[counter].grades.array[0]);
-        // printf("grade: %d\n", a.array[counter].grades.array[1]);
-        // printf("grade: %d\n", a.array[counter].grades.array[2]);
-
-        // printf("\n");
 
         counter++;
     }
-
-    // strcpy(students[0].firstname, "Dickbro");
-    // printf("dick joe: %s \n", students[0].firstname);
-    // printf("%s \n", a.array[9].firstname);
 
     //close file connections
     fclose(read_data);
     return a;
 }
-
-
-
-
 
 
 void print_student_data(int size, struct Student students[]){
@@ -250,12 +131,6 @@ void print_student_data(int size, struct Student students[]){
         {
             printf("grade: %d \n", students[i].grades.array[j]);
         }
-
-        // printf("number of grades: %d \n", students[i].grades.used);
-
-        // printf("grade1: %d \n", students[i].grades.array[0]);
-        // printf("grade2: %d \n", students[i].grades.array[1]);
-        // printf("grade3: %d \n", students[i].grades.array[2]);
 
         printf("\n");
     }
@@ -511,23 +386,15 @@ void insert_student_by_name(Array *a, char stud_id[50], char firstname[50], char
 
     for (int i = 0; i < a->used; i++)
     {
-        // printf("eriks: %d \n", strcmp(firstname, "Erik"));
-        // printf("ene: %s \n", firstname);
-        // printf("anden: %s \n", a->array[i].firstname);
-
-        // printf("her: %d \n", strcmp(firstname, a->array[i].firstname));
 
         //Tager ikke hensyn til andre med samme navn og sorterer ikke efter efternavn!
         if (strcmp(firstname, a->array[i].firstname) == -1)
         {
-            // printf("yes \n");
+
             for (int j = a->used; j > i; j--)
             {
-                // printf("flyt: %s \n", a->array[j].firstname);
                 a->array[j] = a->array[j-1];
             }
-
-            // insertArray(&a, stud_id, firstname, lastname, phone, grades);
 
             strcpy(a->array[i].student_no, stud_id);
             strcpy(a->array[i].firstname, firstname);
@@ -558,9 +425,6 @@ void remove_student_by_id(Array *a, char stud_id[50]) {
 
         if (strcmp(stud_id, a->array[i].student_no) == 0)
         {
-            // printf("Fjern: %s \n", a->array[i].firstname);
-
-            // printf("\n");
 
             //remove student
             for (int j = i; j < a->used-1; j++)

@@ -1,6 +1,5 @@
 TASK 1 
 
-
 TASK 2 
 Student(s) with highest average grade: 
 student no: S3 
@@ -49,7 +48,6 @@ TASK 8
 TASK 9 
 
 TASK 10 
-
 
 TASK 11 
 
