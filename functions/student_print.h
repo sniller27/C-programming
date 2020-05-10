@@ -1,4 +1,6 @@
-
+// prints student information to console and file by using a student array
+// function expect a student array, its size and filepointer for writing to file
+// function prints student number, firstname, lastname, phone number and grades
 void print_student_data(int size, struct Student students[], FILE* output_file){
 
     for (int i = 0; i < size; i++)
@@ -18,6 +20,9 @@ void print_student_data(int size, struct Student students[], FILE* output_file){
     
 }
 
+// prints only specific student information by indexes to console and file by using a student array
+// function expect a student array, its size, known indexes and filepointer for writing to file
+// function prints student number, firstname, lastname, phone number and grades
 void print_student_data_index(int size, struct Student students[], int indexes[], FILE* w_file){
 
     for (int i = 0; i < size; i++)

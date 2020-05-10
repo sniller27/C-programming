@@ -10,11 +10,11 @@
 #include "structs/struct.h"
 
 // internal libraries
-//int and student arrays (dynamic)
+// int and student arrays (dynamic)
 #include "functions/int_array.h"
 #include "functions/student_array.h"
 
-//student functions
+// student functions
 #include "functions/print_write_functions.h"
 #include "functions/student_read_file.h"
 #include "functions/student_print.h"
