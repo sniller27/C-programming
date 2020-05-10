@@ -24,12 +24,12 @@ Array get_student_data(const char *file_name){
     int counter = 0;
     Array a;
 
-    initArray(&a, 5); 
+    init_student_array(&a, INITIAL_SIZE_STUDENT_ARRAY); 
 
     while(fscanf(read_data, "%s %s %s %d %d %d %d", student_no, firstname, lastname, &phone, &grade1, &grade2, &grade3)!=EOF){
 
         int grades[3] = {grade1, grade2, grade3};
-        insertArray(&a, student_no, firstname, lastname, phone, grades);
+        insert_student_array(&a, student_no, firstname, lastname, phone, grades);
 
         counter++;
     }

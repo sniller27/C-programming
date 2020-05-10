@@ -3,7 +3,7 @@
 #include <string.h>
 
 // internal constants
-// #include "constants/my_constants.h"
+#include "constants/my_constants.h"
 
 // internal structs
 // int and student structs
@@ -31,7 +31,7 @@ int main(int argc,char *argv[])
     FILE* output_file = fopen("output.txt", "w");
 
     Array a;
-    initArray(&a, 5);
+    init_student_array(&a, INITIAL_SIZE_STUDENT_ARRAY);
     
     a = get_student_data("tekstfil");
     

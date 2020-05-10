@@ -1,3 +1,4 @@
+// kilde: https://stackoverflow.com/questions/3536153/c-dynamically-growing-array
 void init_int_Array(int_Array *a, int initialSize) {
   a->array = (int *)malloc(initialSize * sizeof(int));
   a->used = 0;

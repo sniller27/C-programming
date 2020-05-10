@@ -1,16 +1,17 @@
+// kilde: https://stackoverflow.com/questions/3536153/c-dynamically-growing-array
 typedef struct {
     struct Student *array;
     int used;
     int size;
 } Array;
 
-void initArray(Array *a, int initialSize) {
+void init_student_array(Array *a, int initialSize) {
     a->array = (struct Student *)malloc(initialSize * sizeof(struct Student));
     a->used = 0;
     a->size = initialSize;
 }
 
-void insertArray(Array *a, char stud_id[50], char firstname[50], char lastname[50], int phone, int grades[]) {
+void insert_student_array(Array *a, char stud_id[50], char firstname[50], char lastname[50], int phone, int grades[]) {
     // a->used is the number of used entries, because a->array[a->used++] updates a->used only *after* the array has been accessed.
     // Therefore a->used can go up to a->size 
     if (a->used == a->size) {
@@ -24,7 +25,7 @@ void insertArray(Array *a, char stud_id[50], char firstname[50], char lastname[5
 
     a->array[a->used].phone = phone;
 
-    init_int_Array(&a->array[a->used].grades, 5);
+    init_int_Array(&a->array[a->used].grades, INITIAL_SIZE_INT_ARRAY);
 
     insert_int_Array(&a->array[a->used].grades, grades[0]);
     insert_int_Array(&a->array[a->used].grades, grades[1]);
@@ -35,7 +36,7 @@ void insertArray(Array *a, char stud_id[50], char firstname[50], char lastname[5
     a->used++;
 }
 
-void freeArray(Array *a) {
+void free_student_array(Array *a) {
     free(a->array);
     a->array = NULL;
     a->used = a->size = 0;
