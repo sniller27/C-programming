@@ -4,6 +4,7 @@
         "print_write_functions.h": "c",
         "my_structs.h": "c",
         "my_constants.h": "c",
-        "student_print.h": "c"
+        "student_print.h": "c",
+        "student.h": "c"
     }
 }

@@ -7,7 +7,6 @@
 
 // internal structs
 // int and student structs
-#include "structs/my_structs.h"
 #include "structs/student.h"
 
 // internal libraries
