@@ -55,3 +55,4 @@ TASK 12
 
 TASK 13 
 
+De studerende skulle gerne blive laest i opgave 1 med et array af pointere, studerende structs og dynamisk lagerallokering. 
