@@ -1,4 +1,4 @@
-Array get_student_data(const char *file_name){
+Student_Array get_student_data(const char *file_name){
 
     int phone, grade1, grade2, grade3;
 
@@ -22,7 +22,7 @@ Array get_student_data(const char *file_name){
     }
 
     int counter = 0;
-    Array a;
+    Student_Array a;
 
     init_student_array(&a, INITIAL_SIZE_STUDENT_ARRAY); 
 

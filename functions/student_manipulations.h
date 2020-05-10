@@ -1,4 +1,4 @@
-void insert_student_by_name(Array *a, char stud_id[50], char firstname[50], char lastname[50], int phone, int grades[]) {
+void insert_student_by_name(Student_Array *a, char stud_id[50], char firstname[50], char lastname[50], int phone, int grades[]) {
 
 
     if (a->used == a->size) {
@@ -40,7 +40,7 @@ void insert_student_by_name(Array *a, char stud_id[50], char firstname[50], char
 
 }
 
-void remove_student_by_id(Array *a, char stud_id[50]) {
+void remove_student_by_id(Student_Array *a, char stud_id[50]) {
 
     for (int i = 0; i < a->used; i++)
     {
