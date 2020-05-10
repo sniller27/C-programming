@@ -16,7 +16,7 @@ void insert_int_Array(int_Array *a, int element) {
   a->array[a->used++] = element;
 }
 
-// free memory (?)
+// free memory in integer array
 void free_int_Array(int_Array *a) {
   free(a->array);
   a->array = NULL;

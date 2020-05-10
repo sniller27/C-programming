@@ -7,7 +7,7 @@
 
 // internal structs
 // int and student structs
-#include "structs/student.h"
+#include "structs/struct.h"
 
 // internal libraries
 //int and student arrays (dynamic)

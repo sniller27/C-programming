@@ -93,6 +93,30 @@ grade: 12
 
 TASK 3 
 Students with grades below avg. 2 grade: 
+student no: S5 
+first name: Carl 
+last name: Carlsen 
+phone: 11111111 
+grade: 10 
+grade: 7 
+grade: 12 
+
+student no: S4 
+first name: Bente 
+last name: Bentsen 
+phone: 22222222 
+grade: 4 
+grade: 12 
+grade: 0 
+
+student no: S1 
+first name: Aneja 
+last name: Andersen 
+phone: 33333333 
+grade: 0 
+grade: 10 
+grade: 7 
+
 student no: S8 
 first name: Birger 
 last name: Jensen 
@@ -112,7 +136,7 @@ grade: 0
 
 TASK 4 
 
-Number of students with avg. grade above avg. 2 grade: 8 
+Number of students with avg. grade above avg. 2 grade: 5 
 
 TASK 5 
 Students with at least one maximum grade: 
@@ -177,7 +201,7 @@ grade: 4
 Anja has 1 max grades in total 
 
 TASK 6 
-Average grade of all students: 6.70                  
+Average grade of all students: -47242773790720.00    
 
 TASK 7 
 Info about all students with lastname Hansen (solely): 
@@ -291,6 +315,30 @@ grade: 0
 
 TASK 9 
 All students sorted by average grades: 
+student no: S5 
+first name: Carl 
+last name: Carlsen 
+phone: 11111111 
+grade: 10 
+grade: 7 
+grade: 12 
+
+student no: S4 
+first name: Bente 
+last name: Bentsen 
+phone: 22222222 
+grade: 4 
+grade: 12 
+grade: 0 
+
+student no: S1 
+first name: Aneja 
+last name: Andersen 
+phone: 33333333 
+grade: 0 
+grade: 10 
+grade: 7 
+
 student no: S8 
 first name: Birger 
 last name: Jensen 
@@ -307,14 +355,6 @@ grade: 2
 grade: 2 
 grade: 0 
 
-student no: S4 
-first name: Bente 
-last name: Bentsen 
-phone: 22222222 
-grade: 4 
-grade: 12 
-grade: 0 
-
 student no: S7 
 first name: Susanne 
 last name: Petersen 
@@ -322,14 +362,6 @@ phone: 77777777
 grade: 12 
 grade: 4 
 grade: 0 
-
-student no: S1 
-first name: Aneja 
-last name: Andersen 
-phone: 33333333 
-grade: 0 
-grade: 10 
-grade: 7 
 
 student no: S2 
 first name: Peter 
@@ -346,14 +378,6 @@ phone: 99999999
 grade: 10 
 grade: 12 
 grade: 4 
-
-student no: S5 
-first name: Carl 
-last name: Carlsen 
-phone: 11111111 
-grade: 10 
-grade: 7 
-grade: 12 
 
 student no: S6 
 first name: Pernille 

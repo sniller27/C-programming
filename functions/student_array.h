@@ -1,12 +1,5 @@
 // kilde: https://stackoverflow.com/questions/3536153/c-dynamically-growing-array
 
-
-typedef struct {
-    struct Student *array;
-    int used;
-    int size;
-} Student_Array;
-
 //intializes student array with memory allocated, spaces used and size
 void init_student_array(Student_Array *a, int initialSize) {
     a->array = (struct Student *)malloc(initialSize * sizeof(struct Student));

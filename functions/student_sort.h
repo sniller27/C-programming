@@ -1,3 +1,5 @@
+// sorts student array by firstname (by using selectionsort)
+// expects a student array and no of elements in the array. returns nothing but sorting the array.
 void selectionsort_by_firstname(struct Student a[],int n) {
 
         int pos;
@@ -27,6 +29,8 @@ void selectionsort_by_firstname(struct Student a[],int n) {
         }
 }
 
+// sorts student array by average grade of a student (by using selectionsort)
+// expects a student array and no of elements in the array. returns nothing but sorting the array.
 void selectionsort_by_avrgrade(struct Student a[],int n) {
 
         int pos;
