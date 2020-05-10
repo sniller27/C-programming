@@ -1,4 +1,4 @@
-void insert_student_by_name(Student_Array *a, char stud_id[50], char firstname[50], char lastname[50], int phone, int grades[]) {
+void insert_student_by_name(Student_Array *a, char stud_id[50], char firstname[50], char lastname[50], int phone, int_Array *grades) {
 
 
     if (a->used == a->size) {
@@ -23,14 +23,17 @@ void insert_student_by_name(Student_Array *a, char stud_id[50], char firstname[5
             strcpy(a->array[i].lastname, lastname);
 
             a->array[i].phone = phone;
+            
+            //sets no of grades (redundant value)
+            a->array[i].no_of_grades = grades->used;
+            //resets used values (due to existing values in index)
+            a->array[i].grades.used = 0;
 
-            for (int j = 0; j < a->array[i].grades.used; j++)
+            for (int j = 0; j < grades->used; j++)
             {
-                a->array[i].grades.array[j] = grades[j];
+                insert_int_Array(&a->array[i].grades, grades->array[j]);
             }
             
-            a->array[i].no_of_grades = a->array[i].grades.used;
-
             a->used++;
             
             break;

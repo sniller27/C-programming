@@ -120,8 +120,15 @@ int main(int argc,char *argv[])
 
     selectionsort_by_firstname(student_array.array, student_array.used);
 
-    int grades[3] = {2, 4, 10};
-    insert_student_by_name(&student_array, "S11", "Erik", "Eriksen", 34343434, grades);
+    //grades can be added here dynamically
+    int_Array grades;
+    init_int_Array(&grades, INITIAL_SIZE_INT_ARRAY);
+
+    insert_int_Array(&grades, 2);
+    insert_int_Array(&grades, 4);
+    insert_int_Array(&grades, 10);
+
+    insert_student_by_name(&student_array, "S11", "Erik", "Eriksen", 34343434, &grades);
     print_student_data(student_array.used, student_array.array);
 
     print_write_string("\n", output_file);
