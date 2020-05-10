@@ -43,16 +43,3 @@ Average grade of all students: 6.70
 TASK 7 
 Info about all students with lastname Hansen (solely): 
 
-TASK 8 
-
-TASK 9 
-
-TASK 10 
-
-TASK 11 
-
-TASK 12 
-
-TASK 13 
-
-De studerende skulle gerne blive laest i opgave 1 med et array af pointere, studerende structs og dynamisk lagerallokering. 
