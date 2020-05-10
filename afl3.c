@@ -47,7 +47,7 @@ int main(int argc,char *argv[])
     print_highest_grade_info(a.used, a.array, highest_grades_indexes, &array_size);
 
     print_write_string("Student(s) with highest average grade: \n", output_file);
-    print_student_data_index(array_size, a.array, highest_grades_indexes);
+    print_student_data_index(array_size, a.array, highest_grades_indexes, output_file);
 
     print_write_string("\n", output_file);
 
@@ -57,7 +57,7 @@ int main(int argc,char *argv[])
     print_value_below_avr_grade_info(a.used, a.array, low_grades_indexes, &array_size2, 2);
 
     print_write_string("Students with grades below avg. 2 grade: \n", output_file);
-    print_student_data_index(array_size2, a.array, low_grades_indexes);
+    print_student_data_index(array_size2, a.array, low_grades_indexes, output_file);
 
     print_write_string("\n", output_file);
 

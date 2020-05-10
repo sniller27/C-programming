@@ -13,6 +13,13 @@ void print_write_string(char text[255], FILE* w_file) {
     
 }
 
+void print_write_string_arg(char text[255], char argument[255], FILE* w_file) {
+
+    printf(text, argument);
+    fprintf(w_file, text, argument);
+    
+}
+
 //print and write function for floats (size of char-array should probably be passed as well)
 void print_write_float(char text[255], float float_value, FILE* w_file) {
 

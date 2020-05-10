@@ -3,9 +3,33 @@ TASK 1
 
 TASK 2 
 Student(s) with highest average grade: 
+student no: S3 
+first name: Christian 
+last name: Hansen 
+phone: 55555555 
+grade: 12 
+grade: 12 
+grade: 12 
+
 
 TASK 3 
 Students with grades below avg. 2 grade: 
+student no: S8 
+first name: Birger 
+last name: Jensen 
+phone: 88888888 
+grade: 2 
+grade: 0 
+grade: 0 
+
+student no: S10 
+first name: Dorte 
+last name: Karlsen 
+phone: 10101010 
+grade: 2 
+grade: 2 
+grade: 0 
+
 
 TASK 4 
 
